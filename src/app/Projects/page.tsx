@@ -11,9 +11,9 @@ export default function Projects() {
       id: 1,
       title: "Neardear Chatroom",
       description: "",
-      image: "/assets/hero/chat.png",
+      image: "/assets/hero/Pladin.png",
       link: "https://neardear-chatroom.netlify.app/",
-       github: "https://github.com/Moazam-khan"
+      github: "https://github.com/Moazam-khan"
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export default function Projects() {
       description: "",
       image: "/assets/hero/desert.png",
       link: "https://desert-safari0.netlify.app/",
-       github: "https://github.com/Moazam-khan"
+      github: "https://github.com/Moazam-khan"
     },
     {
       id: 3,
@@ -29,15 +29,15 @@ export default function Projects() {
       description: "",
       image: "/assets/hero/techcare.png",
       link: "https://tech-care12.netlify.app/",
-       github: "https://github.com/Moazam-khan"
+      github: "https://github.com/Moazam-khan"
     },
     {
       id: 4,
       title: "Tic Tac Toe",
       description: "",
-      image: "/assets/hero/tectoe.png",
+      image: "/assets/hero/Tectoe.png",
       link: "https://tic-tac-toe66.netlify.app/",
-       github: "https://github.com/Moazam-khan"
+      github: "https://github.com/Moazam-khan"
     },
     {
       id: 5,
@@ -45,7 +45,7 @@ export default function Projects() {
       description: "",
       image: "/assets/hero/curren.png",
       link: "https://curr-convt.netlify.app/",
-       github: "https://github.com/Moazam-khan"
+      github: "https://github.com/Moazam-khan"
     },
     {
       id: 6,
@@ -53,7 +53,7 @@ export default function Projects() {
       description: "",
       image: "/assets/hero/Pladin.png",
       link: "https://paladin0.netlify.app/",
-       github: "https://github.com/Moazam-khan"
+      github: "https://github.com/Moazam-khan"
     },
     {
       id: 7,
@@ -61,7 +61,7 @@ export default function Projects() {
       description: "",
       image: "/assets/hero/TodoCapi.png",
       link: "https://todolist-contextapi.netlify.app/",
-       github: "https://github.com/Moazam-khan"
+      github: "https://github.com/Moazam-khan"
     },
     {
       id: 8,
@@ -69,7 +69,7 @@ export default function Projects() {
       description: "",
       image: "/assets/hero/todoredux.png",
       link: "https://todolist-with-rtk.netlify.app/",
-       github: "https://github.com/Moazam-khan"
+      github: "https://github.com/Moazam-khan"
     },
     {
       id: 9,
@@ -99,12 +99,14 @@ export default function Projects() {
               <CardItem translateZ={100} className="w-full mt-4">
                 <Image
                   src={card.image}
-                  height="1000"
-                  width="1000"
+                  height={1000}  // Use number for height
+                  width={1000}   // Use number for width
                   className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                  alt={card.title}
+                  alt={card.title}  // Ensure alt text is descriptive for accessibility
+                  layout="intrinsic"  // Use intrinsic for scaling while maintaining aspect ratio
                 />
               </CardItem>
+             
               <div className="flex justify-between items-center mt-4">
                 <a href={card.link} target="_blank" rel="noopener noreferrer">
                   <CardItem
@@ -112,7 +114,7 @@ export default function Projects() {
                     as="button"
                     className="px-4 py-2 rounded-xl bg-red-900 dark:bg-white dark:text-black text-white text-xs font-bold"
                   >
-                 Visit Deployment
+                    Visit Deployment
                   </CardItem>
                 </a>
                 <a href={card.github} target="_blank" rel="noopener noreferrer">
