@@ -4,8 +4,7 @@
 import React, { useState } from 'react';
 import { FaJsSquare, FaReact, FaHtml5, FaCss3Alt, FaGit, FaGithub, FaNpm, } from 'react-icons/fa';
 import { SiTailwindcss, SiNextdotjs, SiYarn, SiAntdesign } from 'react-icons/si';
-
-import Image from 'next/image';
+import ExportedImage from 'next-image-export-optimizer';
 
 const EducationAndSkills: React.FC = () => {
   const [activeSection, setActiveSection] = useState<'education' | 'skills' | 'achievements'>('education');
@@ -45,27 +44,22 @@ const EducationAndSkills: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center md:items-start mt-4">
           {/* Left Side - Picture */}
           <div className="md:w-1/3 lg:h-full mb-10 md:mb-0 flex flex-col justify-between relative">
-
-
-            <Image
+            <ExportedImage
               src="/assets/hero/uet.jpg"
-
               alt="Your Name"
               width={500}
               height={500}
               className="w-full h-auto lg:h-full shadow-md rounded-lg transform transition-transform duration-500 hover:scale-105"
             />
           </div>
-
-
           {/* Right Side - Description and Links */}
           <div className="md:w-2/3 md:pl-8">
             <p className="mb-2 text-sm">
-            Recent graduate in Computer Systems Engineering with a strong focus on front-end web
-development. Proficient in HTML, CSS, JavaScript, and React.js with experience creating
-responsive, visually appealing applications. Demonstrated ability to leverage front-end
-technologies and Git for collaborative projects, with an eye for detail in design. Eager to apply
-technical and creative skills in a front-end development role to contribute to dynamic and user-friendly web solutions.
+              Recent graduate in Computer Systems Engineering with a strong focus on front-end web
+              development. Proficient in HTML, CSS, JavaScript, and React.js with experience creating
+              responsive, visually appealing applications. Demonstrated ability to leverage front-end
+              technologies and Git for collaborative projects, with an eye for detail in design. Eager to apply
+              technical and creative skills in a front-end development role to contribute to dynamic and user-friendly web solutions.
             </p>
             <div className="flex space-x-4 mb-4">
               <button

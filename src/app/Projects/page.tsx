@@ -1,8 +1,8 @@
 'use client'
-
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
-import Image from "next/image";
+import Link from "next/link";
+import ExportedImage from "next-image-export-optimizer";
 
 export default function Projects() {
 
@@ -57,7 +57,7 @@ export default function Projects() {
     },
     {
       id: 7,
-      title: "Todo List with Context API", 
+      title: "Todo List with Context API",
       description: "",
       image: "/assets/hero/TodoCapi.png",
       link: "https://todolist-contextapi.netlify.app/",
@@ -84,7 +84,7 @@ export default function Projects() {
   return (
     <div className="min-h-screen bg-black py-20 ">
       <h1 className="text-lg md:text-4xl text-center font-sans font-bold text-red-900">
-        All Projects 
+        All Projects
       </h1>
       <div className="grid grid-cols-1 flex items-start sm:grid-cols-2 md:grid-cols-3 gap-4 p-4 ">
         {cardData.map(card => (
@@ -97,7 +97,7 @@ export default function Projects() {
                 {card.description}
               </CardItem>
               <CardItem translateZ={100} className="w-full mt-4">
-                <Image
+                <ExportedImage
                   src={card.image}
                   height={1000}  // Use number for height
                   width={1000}   // Use number for width
@@ -106,9 +106,9 @@ export default function Projects() {
                   layout="intrinsic"  // Use intrinsic for scaling while maintaining aspect ratio
                 />
               </CardItem>
-             
+
               <div className="flex justify-between items-center mt-4">
-                <a href={card.link} target="_blank" rel="noopener noreferrer">
+                <Link href={card.link} target="_blank" rel="noopener noreferrer">
                   <CardItem
                     translateZ={20}
                     as="button"
@@ -116,8 +116,8 @@ export default function Projects() {
                   >
                     Visit Deployment
                   </CardItem>
-                </a>
-                <a href={card.github} target="_blank" rel="noopener noreferrer">
+                </Link>
+                <Link href={card.github} target="_blank" rel="noopener noreferrer">
                   <CardItem
                     translateZ={20}
                     as="button"
@@ -125,7 +125,7 @@ export default function Projects() {
                   >
                     Github
                   </CardItem>
-                </a>
+                </Link>
               </div>
             </CardBody>
           </CardContainer>
