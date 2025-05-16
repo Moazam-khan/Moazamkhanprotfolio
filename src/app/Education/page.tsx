@@ -2,8 +2,34 @@
 'use client';
 
 import React, { useState } from 'react';
-import { FaJsSquare, FaReact, FaHtml5, FaCss3Alt, FaGit, FaGithub, FaNpm, } from 'react-icons/fa';
-import { SiTailwindcss, SiNextdotjs, SiYarn, SiAntdesign } from 'react-icons/si';
+import {
+  FaJsSquare,
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaGit,
+  FaGithub,
+  FaNpm,
+  FaNodeJs,
+  FaDatabase,
+  FaCodeBranch,
+} from 'react-icons/fa';
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiYarn,
+  SiAntdesign,
+  SiTypescript,
+  SiRedux,
+  SiVite,
+  SiExpress,
+  SiPrisma,
+  SiMongodb,
+  SiMysql,
+  SiPostgresql,
+  SiVisualstudiocode,
+  SiAuth0,
+} from 'react-icons/si';
 import ExportedImage from 'next-image-export-optimizer';
 
 const EducationAndSkills: React.FC = () => {
@@ -15,19 +41,37 @@ const EducationAndSkills: React.FC = () => {
     { institution: "UET PESHAWAR", degree: "Bachelor of Science in Computer Systems Engineering  | CGPA=2.73" },
   ];
 
-  const skillsData = [
-    { icon: <FaJsSquare /> },
-    { icon: <FaReact /> },
-    { icon: <FaCss3Alt /> },
-    { icon: <SiTailwindcss /> },
-    { icon: <FaHtml5 /> },
-    { icon: <FaGit /> },
-    { icon: <FaGithub /> },
-    { icon: <FaNpm /> },
-    { icon: <SiNextdotjs /> },
-    { icon: <SiYarn /> },
-    { icon: <SiAntdesign /> },
-  ];
+const skillsData = [
+  // Frontend Technologies
+  { icon: <FaHtml5 title="HTML5" /> },
+  { icon: <FaCss3Alt title="CSS3" /> },
+  { icon: <FaJsSquare title="JavaScript" /> },
+  { icon: <SiTypescript title="TypeScript" /> },
+  { icon: <FaReact title="React" /> },
+  { icon: <SiNextdotjs title="Next.js" /> },
+  { icon: <SiTailwindcss title="Tailwind CSS" /> },
+  { icon: <SiAntdesign title="Ant Design" /> },
+  { icon: <SiRedux title="Redux Toolkit" /> },
+  { icon: <FaCodeBranch title="Context API" /> },
+
+  // Backend & Databases
+  { icon: <FaNodeJs title="Node.js" /> },
+  { icon: <SiExpress title="Express.js" /> },
+  { icon: <SiPrisma title="Prisma ORM" /> },
+  { icon: <SiMysql title="MySQL" /> },
+  { icon: <SiPostgresql title="PostgreSQL" /> },
+  { icon: <SiMongodb title="MongoDB" /> },
+
+  // Authentication
+  { icon: <SiAuth0 title="Authentication" /> },
+
+  // Tools & Platforms
+  { icon: <FaGit title="Git" /> },
+  { icon: <FaGithub title="GitHub" /> },
+  { icon: <FaNpm title="NPM" /> },
+  { icon: <SiYarn title="Yarn" /> },
+  { icon: <SiVisualstudiocode title="VS Code" /> },
+];
 
   const achievementsData = [
     { title: "Executive Member & Ambassador", description: " LET’S HELPWELFARE SOCIETY, UET Peshawar" },
@@ -70,7 +114,7 @@ const EducationAndSkills: React.FC = () => {
               </button>
               <button
                 onClick={() => setActiveSection('skills')}
-                className={`px-4 py-2 rounded ${activeSection === 'skills' ? 'bg-red-500 text-white' : 'bg-gray-700 text-black bold'} transform transition-transform duration-300 hover:scale-110`}
+                className={`px-4 py-2 rounded ${activeSection === 'skills' ? 'bg-red-500 text-white' : 'bg-gray-700 text-black bold'} transform transition-transform duration-300 hover:scale-110 `}
               >
                 Skills
               </button>
