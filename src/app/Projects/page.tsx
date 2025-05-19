@@ -88,7 +88,7 @@ export default function Projects() {
         {cardData.map(card => (
           <div
             key={card.id}
-            className="flex flex-col bg-gradient-to-br from-black via-gray-900 to-red-900 rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+            className="flex flex-col bg-gradient-to-br from-black via-gray-900 to-red-900 shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
           >
             <div className="relative w-full h-60">
               <ExportedImage
@@ -99,7 +99,7 @@ export default function Projects() {
                 className="absolute inset-0 w-full h-full object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent rounded-b-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
             </div>
             <div className="flex flex-col flex-grow p-6">
               <h2 className="text-2xl font-extrabold text-white mb-2 drop-shadow">
