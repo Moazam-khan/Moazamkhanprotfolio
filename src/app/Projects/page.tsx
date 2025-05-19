@@ -1,11 +1,9 @@
 'use client'
 import React from "react";
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
 import ExportedImage from "next-image-export-optimizer";
 
 export default function Projects() {
-
   const cardData = [
     {
       id: 1,
@@ -82,52 +80,56 @@ export default function Projects() {
   ];
 
   return (
-    <div className="min-h-screen bg-black py-20 ">
-      <h1 className="text-lg md:text-4xl text-center font-sans font-bold text-red-900">
+    <div className="min-h-screen bg-black py-20">
+      <h1 className="text-lg md:text-4xl text-center font-sans font-bold text-red-900 mb-8">
         All Projects
       </h1>
-      <div className="grid grid-cols-1 flex items-start sm:grid-cols-2 md:grid-cols-3 gap-4 p-4 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
         {cardData.map(card => (
-          <CardContainer key={card.id} className="inter-var flex flex-col  ">
-            <CardBody className="bg-black-50 flex-grow group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border border-red-900 w-full h-full rounded-xl p-6 border  transition-transform duration-200 ease-in-out hover:scale-105">
-              <CardItem translateZ={50} className="text-xl font-bold text-neutral-600 dark:text-white">
+          <div
+            key={card.id}
+            className="flex flex-col bg-gradient-to-br from-black via-gray-900 to-red-900 rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+          >
+            <div className="relative w-full h-60">
+              <ExportedImage
+                src={card.image}
+                alt={`Screenshot of ${card.title} project`}
+                height={1000}
+                width={1000}
+                className="absolute inset-0 w-full h-full object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent rounded-b-2xl" />
+            </div>
+            <div className="flex flex-col flex-grow p-6">
+              <h2 className="text-2xl font-extrabold text-white mb-2 drop-shadow">
                 {card.title}
-              </CardItem>
-              <CardItem as="p" translateZ={60} className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
-                {card.description}
-              </CardItem>
-             <CardItem translateZ="100" className="w-full mt-2">
-                      <ExportedImage
-                        src={card.image}  // Correct path without /public
-                        alt="Your Image Description"
-                        height={1000}                   // Use integer values for height
-                        width={1000}                    // Use integer values for width
-                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                      />
-                    </CardItem>
-
-              <div className="flex justify-between items-center mt-4">
-                <Link href={card.link} target="_blank" rel="noopener noreferrer">
-                  <CardItem
-                    translateZ={20}
-                    as="button"
-                    className="px-4 py-2 rounded-xl bg-red-900 dark:bg-white dark:text-black text-white text-xs font-bold"
-                  >
-                    Visit Deployment
-                  </CardItem>
+              </h2>
+              {card.description && (
+                <p className="text-neutral-300 text-base mb-4">
+                  {card.description}
+                </p>
+              )}
+              <div className="flex justify-between items-center mt-auto gap-2">
+                <Link
+                  href={card.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2 rounded-lg bg-red-700 hover:bg-red-800 text-white font-semibold shadow transition"
+                >
+                  Live Demo
                 </Link>
-                <Link href={card.github} target="_blank" rel="noopener noreferrer">
-                  <CardItem
-                    translateZ={20}
-                    as="button"
-                    className="px-4 py-2 rounded-xl bg-red-900 dark:bg-white dark:text-black text-white text-xs font-bold"
-                  >
-                    Github
-                  </CardItem>
+                <Link
+                  href={card.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2 rounded-lg bg-white hover:bg-gray-200 text-red-900 font-semibold shadow transition"
+                >
+                  GitHub
                 </Link>
               </div>
-            </CardBody>
-          </CardContainer>
+            </div>
+          </div>
         ))}
       </div>
     </div>
