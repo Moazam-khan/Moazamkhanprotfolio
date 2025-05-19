@@ -11,7 +11,7 @@ import {
   FaGithub,
   FaNpm,
   FaNodeJs,
-  FaDatabase,
+
   FaCodeBranch,
 } from 'react-icons/fa';
 import {
@@ -21,7 +21,7 @@ import {
   SiAntdesign,
   SiTypescript,
   SiRedux,
-  SiVite,
+
   SiExpress,
   SiPrisma,
   SiMongodb,
