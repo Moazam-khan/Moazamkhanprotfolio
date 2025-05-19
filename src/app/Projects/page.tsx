@@ -84,7 +84,7 @@ export default function Projects() {
       <h1 className="text-lg md:text-4xl text-center font-sans font-bold text-red-900 mb-8">
         All Projects
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-8">
         {cardData.map(card => (
           <div
             key={card.id}
@@ -117,7 +117,7 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="px-5 py-2 rounded-lg bg-red-700 hover:bg-red-800 text-white font-semibold shadow transition"
                 >
-                  Live Demo
+                Preview
                 </Link>
                 <Link
                   href={card.github}
