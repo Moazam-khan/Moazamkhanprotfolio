@@ -96,16 +96,15 @@ export default function Projects() {
               <CardItem as="p" translateZ={60} className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
                 {card.description}
               </CardItem>
-              <CardItem translateZ={100} className="w-full mt-4">
-                <ExportedImage
-                  src={card.image}
-                  height={1000}  // Use number for height
-                  width={1000}   // Use number for width
-                  className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                  alt={card.title}  // Ensure alt text is descriptive for accessibility
-                  layout="intrinsic"  // Use intrinsic for scaling while maintaining aspect ratio
-                />
-              </CardItem>
+             <CardItem translateZ="100" className="w-full mt-2">
+                      <ExportedImage
+                        src={card.image}  // Correct path without /public
+                        alt="Your Image Description"
+                        height={1000}                   // Use integer values for height
+                        width={1000}                    // Use integer values for width
+                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                      />
+                    </CardItem>
 
               <div className="flex justify-between items-center mt-4">
                 <Link href={card.link} target="_blank" rel="noopener noreferrer">
