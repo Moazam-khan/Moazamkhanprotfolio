@@ -36,6 +36,7 @@ export default function Projects() {
       image: "/assets/hero/Tectoe.png",
       link: "https://tic-tac-toe66.netlify.app/",
       github: "https://github.com/Moazam-khan"
+      
     },
     {
       id: 5,
