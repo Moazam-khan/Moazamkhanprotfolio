@@ -8,7 +8,7 @@ export default function Right() {
     <div className="w-auto sm:w-[25rem] rounded-xl p-6 border border-white/[0.1] dark:border-white/[0.2] bg-black dark:bg-black relative group shadow transition-shadow duration-300 hover:shadow-2xl hover:shadow-emerald-500/10">
       <div className="w-full mt-2 bg-black">
         <ExportedImage
-          src="/assets/hero/moazam.jpg"
+          src="/assets/moazam.jpg"
           alt="Moazam Khan portrait"
           height={1000}
           width={1000}

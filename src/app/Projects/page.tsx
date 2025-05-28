@@ -9,7 +9,7 @@ export default function Projects() {
       id: 1,
       title: "Neardear Chatroom",
       description: "",
-      image: "/assets/hero/Pladin.png",
+      image: "/assets/Pladin.png",
       link: "https://neardear-chatroom.netlify.app/",
       github: "https://github.com/Moazam-khan"
     },
@@ -17,7 +17,7 @@ export default function Projects() {
       id: 2,
       title: "Desert Safari",
       description: "",
-      image: "/assets/hero/desert.png",
+      image: "/assets/desert.png",
       link: "https://desert-safari0.netlify.app/",
       github: "https://github.com/Moazam-khan"
     },
@@ -25,7 +25,7 @@ export default function Projects() {
       id: 3,
       title: "TechHealth",
       description: "",
-      image: "/assets/hero/techcare.png",
+      image: "/assets/techcare.png",
       link: "https://tech-care12.netlify.app/",
       github: "https://github.com/Moazam-khan"
     },
@@ -33,16 +33,16 @@ export default function Projects() {
       id: 4,
       title: "Tic Tac Toe",
       description: "",
-      image: "/assets/hero/Tectoe.png",
+      image: "/assets/Tectoe.png",
       link: "https://tic-tac-toe66.netlify.app/",
       github: "https://github.com/Moazam-khan"
-      
+
     },
     {
       id: 5,
       title: "Currency Converter",
       description: "",
-      image: "/assets/hero/curren.png",
+      image: "/assets/curren.png",
       link: "https://curr-convt.netlify.app/",
       github: "https://github.com/Moazam-khan"
     },
@@ -50,7 +50,7 @@ export default function Projects() {
       id: 6,
       title: "Pladin",
       description: "",
-      image: "/assets/hero/Pladin.png",
+      image: "/assets/Pladin.png",
       link: "https://paladin0.netlify.app/",
       github: "https://github.com/Moazam-khan"
     },
@@ -58,7 +58,7 @@ export default function Projects() {
       id: 7,
       title: "Todo List with Context API",
       description: "",
-      image: "/assets/hero/TodoCapi.png",
+      image: "/assets/TodoCapi.png",
       link: "https://todolist-contextapi.netlify.app/",
       github: "https://github.com/Moazam-khan"
     },
@@ -66,7 +66,7 @@ export default function Projects() {
       id: 8,
       title: "Todo List with Redux Toolkit",
       description: "",
-      image: "/assets/hero/todoredux.png",
+      image: "/assets/todoredux.png",
       link: "https://todolist-with-rtk.netlify.app/",
       github: "https://github.com/Moazam-khan"
     },
@@ -74,7 +74,7 @@ export default function Projects() {
       id: 9,
       title: "React Router DOM",
       description: "",
-      image: "/assets/hero/Reactrouter.png",
+      image: "/assets/Reactrouter.png",
       link: "https://rrd-react-router-dom.netlify.app",
       github: "https://github.com/Moazam-khan"
     },
