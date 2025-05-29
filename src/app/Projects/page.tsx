@@ -1,17 +1,15 @@
 'use client'
-
 import React from "react";
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
-import Image from "next/image";
+import Link from "next/link";
+import ExportedImage from "next-image-export-optimizer";
 
 export default function Projects() {
-
   const cardData = [
     {
       id: 1,
       title: "Neardear Chatroom",
       description: "",
-      image: "/assets/hero/Pladin.png",
+      image: "/assets/Pladin.png",
       link: "https://neardear-chatroom.netlify.app/",
       github: "https://github.com/Moazam-khan"
     },
@@ -19,7 +17,7 @@ export default function Projects() {
       id: 2,
       title: "Desert Safari",
       description: "",
-      image: "/assets/hero/desert.png",
+      image: "/assets/desert.png",
       link: "https://desert-safari0.netlify.app/",
       github: "https://github.com/Moazam-khan"
     },
@@ -27,7 +25,7 @@ export default function Projects() {
       id: 3,
       title: "TechHealth",
       description: "",
-      image: "/assets/hero/techcare.png",
+      image: "/assets/techcare.png",
       link: "https://tech-care12.netlify.app/",
       github: "https://github.com/Moazam-khan"
     },
@@ -35,15 +33,16 @@ export default function Projects() {
       id: 4,
       title: "Tic Tac Toe",
       description: "",
-      image: "/assets/hero/Tectoe.png",
+      image: "/assets/Tectoe.png",
       link: "https://tic-tac-toe66.netlify.app/",
       github: "https://github.com/Moazam-khan"
+
     },
     {
       id: 5,
       title: "Currency Converter",
       description: "",
-      image: "/assets/hero/curren.png",
+      image: "/assets/curren.png",
       link: "https://curr-convt.netlify.app/",
       github: "https://github.com/Moazam-khan"
     },
@@ -51,15 +50,15 @@ export default function Projects() {
       id: 6,
       title: "Pladin",
       description: "",
-      image: "/assets/hero/Pladin.png",
+      image: "/assets/Pladin.png",
       link: "https://paladin0.netlify.app/",
       github: "https://github.com/Moazam-khan"
     },
     {
       id: 7,
-      title: "Todo List with Context API", 
+      title: "Todo List with Context API",
       description: "",
-      image: "/assets/hero/TodoCapi.png",
+      image: "/assets/TodoCapi.png",
       link: "https://todolist-contextapi.netlify.app/",
       github: "https://github.com/Moazam-khan"
     },
@@ -67,7 +66,7 @@ export default function Projects() {
       id: 8,
       title: "Todo List with Redux Toolkit",
       description: "",
-      image: "/assets/hero/todoredux.png",
+      image: "/assets/todoredux.png",
       link: "https://todolist-with-rtk.netlify.app/",
       github: "https://github.com/Moazam-khan"
     },
@@ -75,60 +74,63 @@ export default function Projects() {
       id: 9,
       title: "React Router DOM",
       description: "",
-      image: "/assets/hero/Reactrouter.png",
+      image: "/assets/Reactrouter.png",
       link: "https://rrd-react-router-dom.netlify.app",
       github: "https://github.com/Moazam-khan"
     },
   ];
 
   return (
-    <div className="min-h-screen bg-black py-20 ">
-      <h1 className="text-lg md:text-4xl text-center font-sans font-bold text-red-900">
-        All Projects 
+    <div className="min-h-screen bg-black py-20">
+      <h1 className="text-lg md:text-4xl text-center font-sans font-bold text-red-900 mb-8">
+        All Projects
       </h1>
-      <div className="grid grid-cols-1 flex items-start sm:grid-cols-2 md:grid-cols-3 gap-4 p-4 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-8">
         {cardData.map(card => (
-          <CardContainer key={card.id} className="inter-var flex flex-col  ">
-            <CardBody className="bg-black-50 flex-grow group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border border-red-900 w-full h-full rounded-xl p-6 border  transition-transform duration-200 ease-in-out hover:scale-105">
-              <CardItem translateZ={50} className="text-xl font-bold text-neutral-600 dark:text-white">
+          <div
+            key={card.id}
+            className="flex flex-col bg-gradient-to-br from-black via-gray-900 to-red-900 shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+          >
+            <div className="relative w-full h-60">
+              <ExportedImage
+                src={card.image}
+                alt={`Screenshot of ${card.title} project`}
+                height={1000}
+                width={1000}
+                className="absolute inset-0 w-full h-full object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+            </div>
+            <div className="flex flex-col flex-grow p-6">
+              <h2 className="text-2xl font-extrabold text-white mb-2 drop-shadow">
                 {card.title}
-              </CardItem>
-              <CardItem as="p" translateZ={60} className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
-                {card.description}
-              </CardItem>
-              <CardItem translateZ={100} className="w-full mt-4">
-                <Image
-                  src={card.image}
-                  height={1000}  // Use number for height
-                  width={1000}   // Use number for width
-                  className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                  alt={card.title}  // Ensure alt text is descriptive for accessibility
-                  layout="intrinsic"  // Use intrinsic for scaling while maintaining aspect ratio
-                />
-              </CardItem>
-             
-              <div className="flex justify-between items-center mt-4">
-                <a href={card.link} target="_blank" rel="noopener noreferrer">
-                  <CardItem
-                    translateZ={20}
-                    as="button"
-                    className="px-4 py-2 rounded-xl bg-red-900 dark:bg-white dark:text-black text-white text-xs font-bold"
-                  >
-                    Visit Deployment
-                  </CardItem>
-                </a>
-                <a href={card.github} target="_blank" rel="noopener noreferrer">
-                  <CardItem
-                    translateZ={20}
-                    as="button"
-                    className="px-4 py-2 rounded-xl bg-red-900 dark:bg-white dark:text-black text-white text-xs font-bold"
-                  >
-                    Github
-                  </CardItem>
-                </a>
+              </h2>
+              {card.description && (
+                <p className="text-neutral-300 text-base mb-4">
+                  {card.description}
+                </p>
+              )}
+              <div className="flex justify-between items-center mt-auto gap-2">
+                <Link
+                  href={card.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2 rounded-lg bg-red-700 hover:bg-red-800 text-white font-semibold shadow transition"
+                >
+                Preview
+                </Link>
+                <Link
+                  href={card.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2 rounded-lg bg-white hover:bg-gray-200 text-red-900 font-semibold shadow transition"
+                >
+                  GitHub
+                </Link>
               </div>
-            </CardBody>
-          </CardContainer>
+            </div>
+          </div>
         ))}
       </div>
     </div>
