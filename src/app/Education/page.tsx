@@ -89,7 +89,7 @@ const skillsData = [
           {/* Left Side - Picture */}
           <div className="md:w-1/3 lg:h-full mb-10 md:mb-0 flex flex-col justify-between relative">
             <ExportedImage
-              src="/assets/hero/uet.jpg"
+              src="/assets/uet.jpg"
               alt="Your Name"
               width={500}
               height={500}
