@@ -16,12 +16,7 @@ export default function Experiences() {
       period: "Jun 2022 - Dec 2022",
       description: "Assisted in building and optimizing landing pages. Gained hands-on experience with JavaScript, HTML, CSS, and version control using Git."
     },
-    {
-      company: "Freelance",
-      role: "Full Stack Developer",
-      period: "2021 - 2022",
-      description: "Worked with various clients to deliver custom web solutions, including e-commerce sites and dashboards, using MERN stack technologies."
-    }
+   
   ];
 
   return (
