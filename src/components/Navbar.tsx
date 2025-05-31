@@ -5,6 +5,7 @@ import { FaHome, FaProjectDiagram, FaGraduationCap, FaEnvelope } from "react-ico
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MobileNavbar from "./MobileNavbar";
+import { FaBriefcase } from "react-icons/fa6";
 
 export default function Navbar() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -41,6 +42,10 @@ export default function Navbar() {
             <Link href="/Projects" className={`transform transition-transform duration-300 hover:scale-110 flex items-center space-x-2 ${pathname === '/Projects' ? 'text-red-500' : 'text-white hover:text-red-500'}`}>
               <FaProjectDiagram className={`${pathname === '/Projects' ? 'text-red-500' : 'hover:text-red-500'}`} />
               <span>Projects</span>
+            </Link>
+            <Link href="/Experience" className={`transform transition-transform duration-300 hover:scale-110 flex items-center space-x-2 ${pathname === '/Experinces' ? 'text-red-500' : 'text-white hover:text-red-500'}`}>
+              <FaBriefcase className={`${pathname === '/Experinces' ? 'text-red-500' : 'hover:text-red-500'}`} />
+              <span>Experience</span>
             </Link>
             <Link href="/Education" className={`transform transition-transform duration-300 hover:scale-110 flex items-center space-x-2 ${pathname === '/Education' ? 'text-red-500' : 'text-white hover:text-red-500'}`}>
               <FaGraduationCap className={`${pathname === '/Education' ? 'text-red-500' : 'hover:text-red-500'}`} />

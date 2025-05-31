@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from "react";
-import { FaHome, FaProjectDiagram, FaGraduationCap, FaEnvelope, FaBars, FaTimes } from "react-icons/fa";
+import { FaHome, FaProjectDiagram, FaGraduationCap, FaEnvelope, FaBars, FaTimes, FaBriefcase } from "react-icons/fa";
 import Link from "next/link";
 
 // MobileNavbar Component
@@ -25,6 +25,9 @@ export default function MobileNavbar() {
             </Link>
             <Link href="/Projects" className="text-gray-300  hover:text-red-500 transform transition-transform duration-300 hover:scale-125">
               <FaProjectDiagram size={30} />
+            </Link>
+             <Link href="/Experience" className="text-gray-300  hover:text-red-500 transform transition-transform duration-300 hover:scale-125">
+              <FaBriefcase size={30} />
             </Link>
             <Link href="/Education" className="text-gray-300  hover:text-red-500 transform transition-transform duration-300 hover:scale-125">
               <FaGraduationCap size={30} />
