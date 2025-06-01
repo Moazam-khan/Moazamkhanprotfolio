@@ -4,17 +4,24 @@ import React from "react";
 
 export default function Experiences() {
   const experiences = [
-    {
-      company: "ABC Tech Solutions",
-      role: "Frontend Developer",
-      period: "Jan 2023 - Present",
-      description: "Developed and maintained responsive web applications using React, Next.js, and Tailwind CSS. Collaborated with designers and backend developers to deliver seamless user experiences."
+
+      {
+      company: " Federal Board of Revenue (FBR)  Paksitan Abbottabad ",
+      role: "Frontend & Networking Intern (onsite)",
+      period: " May 2024 – Sep 2024",
+      description: " Developed reusable components for a lawyer’s website and built a dashboard with custom API endpoints. Used Multer for file uploads and handled both frontend and backend of the dashboard using Next.js, Express, MongoDB, MySQL, and Sequelize."
     },
     {
-      company: "XYZ Innovations",
-      role: "Web Developer Intern",
-      period: "Jun 2022 - Dec 2022",
-      description: "Assisted in building and optimizing landing pages. Gained hands-on experience with JavaScript, HTML, CSS, and version control using Git."
+      company: "Selsla Technology Remote (Riyadh, Saudi Arabia)",
+      role: "Frontend Developer",
+      period: "Dec 2024",
+      description: "Worked on a lawyer’s website using Next.js. Fixed UI bugs, optimized performance, and ensured responsive design using Git for collaboration"
+    },
+    {
+      company: "Selsla Technology Remote (Riyadh, Saudi Arabia)",
+      role: "Junior Full Stack Developer",
+      period: "jan 2025 - march 2025",
+      description: " Developed reusable components for a lawyer’s website and built a dashboard with custom API endpoints. Used Multer for file uploads and handled both frontend and backend of the dashboard using Next.js, Express, MongoDB, MySQL, and Sequelize."
     },
    
   ];
