@@ -5,16 +5,32 @@ import ExportedImage from "next-image-export-optimizer";
 
 export default function Projects() {
   const cardData = [
-    {
+     {
       id: 1,
+      title: "Desert Safari Ride",
+      description: "",
+      image: "/assets/desertsafari.png",
+      link: "https://desert-safari-ride.vercel.app",
+      github: "https://github.com/Moazam-khan"
+    },
+       {
+      id: 2,
+      title: "OTP with Email",
+      description: "",
+      image: "/assets/otp.png",
+      link: "https://nextauthapp-six.vercel.app",
+      github: "https://github.com/Moazam-khan"
+    },
+    {
+      id: 3,
       title: "Neardear Chatroom",
       description: "",
-      image: "/assets/Pladin.png",
+      image: "/assets/chat.png",
       link: "https://neardear-chatroom.netlify.app/",
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 2,
+      id: 4,
       title: "Desert Safari",
       description: "",
       image: "/assets/desert.png",
@@ -22,7 +38,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 3,
+      id: 5,
       title: "TechHealth",
       description: "",
       image: "/assets/techcare.png",
@@ -30,7 +46,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 4,
+      id: 6,
       title: "Tic Tac Toe",
       description: "",
       image: "/assets/Tectoe.png",
@@ -39,7 +55,7 @@ export default function Projects() {
 
     },
     {
-      id: 5,
+      id: 7,
       title: "Currency Converter",
       description: "",
       image: "/assets/curren.png",
@@ -47,7 +63,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 6,
+      id: 8,
       title: "Pladin",
       description: "",
       image: "/assets/Pladin.png",
@@ -55,7 +71,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 7,
+      id: 9,
       title: "Todo List with Context API",
       description: "",
       image: "/assets/TodoCapi.png",
@@ -63,7 +79,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 8,
+      id: 10,
       title: "Todo List with Redux Toolkit",
       description: "",
       image: "/assets/todoredux.png",
@@ -71,7 +87,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 9,
+      id: 11,
       title: "React Router DOM",
       description: "",
       image: "/assets/Reactrouter.png",

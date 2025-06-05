@@ -9,11 +9,11 @@ export default function Experiences() {
       company: " Federal Board of Revenue (FBR)  Paksitan Abbottabad ",
       role: "Frontend & Networking Intern (onsite)",
       period: " May 2024 – Sep 2024",
-      description: " Developed reusable components for a lawyer’s website and built a dashboard with custom API endpoints. Used Multer for file uploads and handled both frontend and backend of the dashboard using Next.js, Express, MongoDB, MySQL, and Sequelize."
+      description: " Built responsive UIs with HTML, CSS, JavaScript, and React. Gained experience in networking, version control, and team collaboration"
     },
     {
       company: "Selsla Technology Remote (Riyadh, Saudi Arabia)",
-      role: "Frontend Developer",
+      role: "Next.js Intern (remote)",
       period: "Dec 2024",
       description: "Worked on a lawyer’s website using Next.js. Fixed UI bugs, optimized performance, and ensured responsive design using Git for collaboration"
     },
@@ -21,7 +21,7 @@ export default function Experiences() {
       company: "Selsla Technology Remote (Riyadh, Saudi Arabia)",
       role: "Junior Full Stack Developer",
       period: "jan 2025 - march 2025",
-      description: " Developed reusable components for a lawyer’s website and built a dashboard with custom API endpoints. Used Multer for file uploads and handled both frontend and backend of the dashboard using Next.js, Express, MongoDB, MySQL, and Sequelize."
+      description: "Developed reusable components for a lawyer’s website and built a dashboard with custom API endpoints. Used Multer for file uploads and handled both frontend and backend of the dashboard using Next.js, Express, MongoDB, MySQL, and Sequelize."
     },
    
   ];

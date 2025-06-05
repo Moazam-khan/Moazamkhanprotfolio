@@ -33,7 +33,7 @@ import {
 import ExportedImage from 'next-image-export-optimizer';
 
 const EducationAndSkills: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<'education' | 'skills' | 'achievements'>('education');
+  const [activeSection, setActiveSection] = useState<'education' | 'skills' | 'achievements' | 'certification'>('education');
 
   const educationData = [
     { institution: "APSACS RISALPUR CANTT", degree: "Matriculation  | 81%" },
@@ -77,7 +77,16 @@ const skillsData = [
     { title: "Executive Member & Ambassador", description: " LET’S HELPWELFARE SOCIETY, UET Peshawar" },
     { title: "Assistant to Director, Prime Minister’s Laptop", description: "Scheme Phase-II, Pakistan (2023)" },
     { title: "Appreciation Certificate Recipient", description: "Prime Minister's Office of Pakistan – Green Youth Movement Club" },
+    
   ];
+
+
+ const certification = [
+
+  { title: "Responsive Web Design Certification", description: "FreeCodeCamp: HTML, CSS, Flexbox, and Grid" },
+  { title: "Back End Development and APIs Certification", description: "FreeCodeCamp: Node.js, Express, MongoDB, and APIs" }
+];
+
 
   return (
     <div className="min-h-screen flex items-center justify-center mb-30 p-4 bg-black  text-white">
@@ -124,6 +133,13 @@ const skillsData = [
               >
                 Achievements
               </button>
+
+                  <button
+                onClick={() => setActiveSection('certification')}
+                className={`px-4 py-2 rounded ${activeSection === 'certification' ? 'bg-red-500 text-white' : 'bg-gray-700 text-black bold'} transform transition-transform duration-300 hover:scale-110`}
+              >
+             Certifications
+              </button>
             </div>
 
             {/* Conditional Rendering Based on Active Section */}
@@ -168,6 +184,23 @@ const skillsData = [
                   </ul>
                 </div>
               )}
+
+
+             {activeSection === 'certification' && (
+              <div>
+                <h2 className="text-2xl font-bold mb-4 text-red-500">Certifications</h2>
+                <ul>
+                {certification.map((cert, index) => (
+                  <li key={index} className="mb-4">
+                  <h3 className="text-xl font-semibold text-black">{cert.title}</h3>
+                  <p className="text-gray-400">{cert.description}</p>
+                  </li>
+                ))}
+                </ul>
+              </div>
+              )}
+
+            
             </div>
           </div>
         </div>
