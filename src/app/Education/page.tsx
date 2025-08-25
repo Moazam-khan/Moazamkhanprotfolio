@@ -21,6 +21,10 @@ import {
   SiAntdesign,
   SiTypescript,
   SiRedux,
+  SiVercel,
+  SiCloudflare,
+  SiResend,
+  SiPaypal,
 
   SiExpress,
   SiPrisma,
@@ -71,6 +75,10 @@ const skillsData = [
   { icon: <FaNpm title="NPM" /> },
   { icon: <SiYarn title="Yarn" /> },
   { icon: <SiVisualstudiocode title="VS Code" /> },
+  { icon: <SiVercel title="Vercel" /> },
+  { icon: <SiCloudflare title="Cloudflare" /> },
+  { icon: <SiResend title="Resend" /> },
+  { icon: <SiPaypal title="PayPal" /> }
 ];
 
   const achievementsData = [
@@ -84,7 +92,8 @@ const skillsData = [
  const certification = [
 
   { title: "Responsive Web Design Certification", description: "FreeCodeCamp: HTML, CSS, Flexbox, and Grid" },
-  { title: "Back End Development and APIs Certification", description: "FreeCodeCamp: Node.js, Express, MongoDB, and APIs" }
+  { title: "Back End Development and APIs Certification", description: "FreeCodeCamp: Node.js, Express, MongoDB, and APIs" },
+    { title: "CCNA Certification", description: "Cisco Certified Network Associate " }
 ];
 
 
