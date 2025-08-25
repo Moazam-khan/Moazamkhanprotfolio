@@ -5,12 +5,15 @@ import React from "react";
 export default function Experiences() {
   const experiences = [
 
-      {
+    {
       company: " Federal Board of Revenue (FBR)  Paksitan Abbottabad ",
       role: "Frontend & Networking Intern (onsite)",
       period: " May 2024 – Sep 2024",
       description: " Built responsive UIs with HTML, CSS, JavaScript, and React. Gained experience in networking, version control, and team collaboration"
     },
+
+
+
     {
       company: "Selsla Technology Remote (Riyadh, Saudi Arabia)",
       role: "Next.js Intern (remote)",
@@ -24,13 +27,14 @@ export default function Experiences() {
       description: "Developed reusable components for a lawyer’s website and built a dashboard with custom API endpoints. Used Multer for file uploads and handled both frontend and backend of the dashboard using Next.js, Express, MongoDB, MySQL, and Sequelize."
     },
     {
-  company: "Built a complete end-to-end application, handling both frontend and backend development and Deployment",
-   role:  "Full-Stack Web Application (Freelancing Project)",
-   description: "Implemented secure payment integration with PayPal for online transactions, integrated email services with Resend for automated notifications, developed the backend using Next.js API routes and MongoDB for high performance and scalability, and deployed the application on Cloudflare with a custom domain purchased from Hostinger."
+      company: "Built a complete end-to-end application, handling both frontend and backend development and Deployment",
+      role: "Full-Stack Web Application (Freelancing Project)",
+         period: "April-2025 ",
+      description: "Implemented secure payment integration with PayPal for online transactions, integrated email services with Resend for automated notifications, developed the backend using Next.js API routes and MongoDB for high performance and scalability, and deployed the application on Cloudflare with a custom domain purchased from Hostinger."
 
-}
+    }
 
-   
+
   ];
 
   return (
