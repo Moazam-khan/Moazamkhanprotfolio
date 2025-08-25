@@ -20,7 +20,7 @@ function ContactUs() {
 
         {/* Add relative and z-10 to bring content to the front */}
         <h1 className="text-lg md:text-4xl text-center font-sans font-bold mb-8 text-red-900">
-          Contact Us
+          Contact
         </h1>
         <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center">
           We&apos;re here to help with any questions about our courses,
