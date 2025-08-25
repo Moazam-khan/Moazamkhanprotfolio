@@ -49,6 +49,7 @@ export default function Experiences() {
             <div className="flex justify-between items-center text-neutral-400 text-sm mb-2">
               <span>{exp.company}</span>
               <span>{exp.period}</span>
+              
             </div>
             <p className="text-neutral-200">{exp.description}</p>
           </div>
