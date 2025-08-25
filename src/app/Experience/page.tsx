@@ -29,7 +29,7 @@ export default function Experiences() {
     {
       company: "Built a complete end-to-end application, handling both frontend and backend development and Deployment",
       role: "Full-Stack Web Application (Freelancing Project)",
-         period: "April-2025 ",
+      period: "jul-2025 ",
       description: "Implemented secure payment integration with PayPal for online transactions, integrated email services with Resend for automated notifications, developed the backend using Next.js API routes and MongoDB for high performance and scalability, and deployed the application on Cloudflare with a custom domain purchased from Hostinger."
 
     }
