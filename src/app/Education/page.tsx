@@ -172,7 +172,7 @@ const skillsData = [
                   <h2 className="text-2xl font-bold mb-4 text-red-500 ">Skills</h2>
                   <ul className="flex flex-wrap space-x-6">
                     {skillsData.map((skill, index) => (
-                      <li key={index} className="flex items-center text-gray-400 text-5xl transform transition-transform duration-500 hover:scale-125 text-black">
+                      <li key={index} className="flex items-center  text-5xl transform transition-transform duration-500 hover:scale-125 text-black">
                         {skill.icon}
                       </li>
                     ))}
