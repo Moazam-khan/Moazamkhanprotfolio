@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Leftside = () => {
   const [text] = useTypewriter({
-    words: ["Computer Systems Engineer.", "Full Stack Developer.", "MERN Stack Developer."],
+    words: ["Computer Systems Engineer.", "Full Stack Developer."],
     loop: true,
     typeSpeed: 50,
     deleteSpeed: 20,
