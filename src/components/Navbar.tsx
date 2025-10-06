@@ -9,52 +9,75 @@ import { FaBriefcase } from "react-icons/fa6";
 
 export default function Navbar() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
   const pathname = usePathname();
 
-  // Detect screen width on resize and set isMobile state
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // 768px is the md breakpoint
+      setIsMobile(window.innerWidth < 768);
     };
 
-    // Set initial state
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
     handleResize();
+    handleScroll();
 
-    // Attach event listener
     window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
 
-    // Cleanup event listener on component unmount
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
+  const navItems = [
+    { href: "/", icon: FaHome, label: "Home" },
+    { href: "/Projects", icon: FaProjectDiagram, label: "Projects" },
+    { href: "/Experience", icon: FaBriefcase, label: "Experience" },
+    { href: "/Education", icon: FaGraduationCap, label: "Education" },
+    { href: "/Contact", icon: FaEnvelope, label: "Contact" },
+  ];
+
   return (
-    <div className="fixed w-full bg-white shadow-md z-50">
+    <div className={`fixed w-full z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'bg-black/80 backdrop-blur-md shadow-lg shadow-red-500/10' 
+        : 'bg-transparent'
+    }`}>
       {isMobile ? (
         <MobileNavbar />
       ) : (
-        <nav className="hidden md:flex items-center justify-center px-8 py-4 w-full bg-black">
-          {/* Menu Items in the center */}
-          <div className="flex space-x-8">
-            <Link href="/" className={`transform transition-transform duration-300 hover:scale-110 flex items-center space-x-2 ${pathname === '/' ? 'text-red-500' : 'text-white hover:text-red-500'}`}>
-              <FaHome className={`${pathname === '/' ? 'text-red-500' : 'hover:text-red-500'}`} />
-              <span>Home</span>
-            </Link>
-            <Link href="/Projects" className={`transform transition-transform duration-300 hover:scale-110 flex items-center space-x-2 ${pathname === '/Projects' ? 'text-red-500' : 'text-white hover:text-red-500'}`}>
-              <FaProjectDiagram className={`${pathname === '/Projects' ? 'text-red-500' : 'hover:text-red-500'}`} />
-              <span>Projects</span>
-            </Link>
-            <Link href="/Experience" className={`transform transition-transform duration-300 hover:scale-110 flex items-center space-x-2 ${pathname === '/Experinces' ? 'text-red-500' : 'text-white hover:text-red-500'}`}>
-              <FaBriefcase className={`${pathname === '/Experinces' ? 'text-red-500' : 'hover:text-red-500'}`} />
-              <span>Experience</span>
-            </Link>
-            <Link href="/Education" className={`transform transition-transform duration-300 hover:scale-110 flex items-center space-x-2 ${pathname === '/Education' ? 'text-red-500' : 'text-white hover:text-red-500'}`}>
-              <FaGraduationCap className={`${pathname === '/Education' ? 'text-red-500' : 'hover:text-red-500'}`} />
-              <span>Education</span>
-            </Link>
-            <Link href="/Contact" className={`transform transition-transform duration-300 hover:scale-110 flex items-center space-x-2 ${pathname === '/Contact' ? 'text-red-500' : 'text-white hover:text-red-500'}`}>
-              <FaEnvelope className={`${pathname === '/Contact' ? 'text-red-500' : 'hover:text-red-500'}`} />
-              <span>Contact</span>
-            </Link>
+        <nav className="hidden md:flex items-center justify-center px-8 py-5">
+          <div className="flex items-center space-x-2 bg-black/40 backdrop-blur-lg border border-white/10 rounded-full px-8 py-3 shadow-xl">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              const isActive = pathname === item.href;
+              
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`group relative flex items-center space-x-2 px-5 py-2.5 rounded-full transition-all duration-300 ${
+                    isActive
+                      ? 'bg-gradient-to-r from-red-600 to-red-500 text-white shadow-lg shadow-red-500/50'
+                      : 'text-gray-300 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <Icon className={`text-lg transition-all duration-300 ${
+                    isActive ? 'text-white' : 'text-gray-400 group-hover:text-red-500'
+                  }`} />
+                  <span className="font-medium tracking-wide">{item.label}</span>
+                  
+                  {/* Hover effect */}
+                  {!isActive && (
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-600/0 via-red-500/0 to-red-600/0 group-hover:from-red-600/10 group-hover:via-red-500/10 group-hover:to-red-600/10 transition-all duration-300" />
+                  )}
+                </Link>
+              );
+            })}
           </div>
         </nav>
       )}

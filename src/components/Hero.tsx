@@ -4,7 +4,7 @@ import Leftside from "./Leftside";
 
 export default function BackgroundBeamsWithCollisionDemo() {
   return (
-    <div className="bg-black-100">
+    <div className="bg-black-100 pt-20">
       <BackgroundBeamsWithCollision>
         <Leftside></Leftside>
       </BackgroundBeamsWithCollision>
