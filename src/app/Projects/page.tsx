@@ -15,6 +15,14 @@ export default function Projects() {
     },
      {
       id: 2,
+      title: "UJEasyLife",
+      description: "",
+      image: "/assets/uj.png",
+      link: "https://www.ujeasylife.com",
+      github: "https://github.com/Moazam-khan"
+    },
+     {
+      id: 3,
       title: "Alaqeel",
       description: "",
       image: "/assets/alaqeel.png",
@@ -22,7 +30,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 3,
+      id: 4,
       title: "Rawdhat",
       description: "",
       image: "/assets/rahwat.png",
@@ -30,7 +38,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
      {
-      id: 4,
+      id: 5,
       title: "Desert Safari Ride",
       description: "",
       image: "/assets/desertsafari.png",
@@ -38,7 +46,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
        {
-      id: 5,
+      id: 6,
       title: "OTP with Email",
       description: "",
       image: "/assets/otp.png",
@@ -46,7 +54,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 6,
+      id: 7,
       title: "Neardear Chatroom",
       description: "",
       image: "/assets/chat.png",
@@ -54,7 +62,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 7,
+      id: 8,
       title: "Desert Safari",
       description: "",
       image: "/assets/desert.png",
@@ -62,7 +70,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 8,
+      id: 9,
       title: "TechHealth",
       description: "",
       image: "/assets/techcare.png",
@@ -70,7 +78,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 9,
+      id: 10,
       title: "Tic Tac Toe",
       description: "",
       image: "/assets/Tectoe.png",
@@ -79,7 +87,7 @@ export default function Projects() {
 
     },
     {
-      id: 10,
+      id: 11,
       title: "Currency Converter",
       description: "",
       image: "/assets/curren.png",
@@ -87,7 +95,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 11,
+      id: 12,
       title: "Pladin",
       description: "",
       image: "/assets/Pladin.png",
@@ -95,7 +103,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 12,
+      id: 13,
       title: "Todo List with Context API",
       description: "",
       image: "/assets/TodoCapi.png",
@@ -103,7 +111,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 13,
+      id: 14,
       title: "Todo List with Redux Toolkit",
       description: "",
       image: "/assets/todoredux.png",
@@ -111,7 +119,7 @@ export default function Projects() {
       github: "https://github.com/Moazam-khan"
     },
     {
-      id: 14,
+      id: 15,
       title: "React Router DOM",
       description: "",
       image: "/assets/Reactrouter.png",
