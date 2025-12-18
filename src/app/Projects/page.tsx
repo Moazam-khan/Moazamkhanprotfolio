@@ -8,6 +8,16 @@ export default function Projects() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   const cardData = [
+       {
+      id: 0,
+      title: "Saf Automation LLC",
+      description: "Full-stack booking platform Digital and Development automation services and automated email and whatsapp notifications",
+      image: "/assets/saf.png",
+      link: "https://www.safautmationllc.com",
+      github: "https://github.com/Moazam-khan",
+      tags: ["Next.js", "MongoDB","Resend"],
+      featured: true
+    },
     {
       id: 1,
       title: "Hag Safari",

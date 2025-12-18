@@ -44,20 +44,20 @@ const EducationAndSkills: React.FC = () => {
     { 
       institution: "UET PESHAWAR", 
       degree: "Bachelor of Science in Computer Systems Engineering", 
-      grade: "CGPA: 2.73",
-      year: "2020 - 2024"
+      // grade: "CGPA: 2.73",
+      // year: "2020 - 2024"
     },
     { 
       institution: "TWPSAC ABBOTTABAD", 
       degree: "Pre-Engineering", 
-      grade: "78%",
-      year: "2018 - 2020"
+      // grade: "78%",
+      // year: "2018 - 2020"
     },
     { 
       institution: "APSACS RISALPUR CANTT", 
       degree: "Matriculation", 
-      grade: "81%",
-      year: "2016 - 2018"
+      // grade: "81%",
+      // year: "2016 - 2018"
     },
   ];
 
@@ -232,12 +232,12 @@ const EducationAndSkills: React.FC = () => {
                               <h3 className="text-xl font-bold text-white group-hover:text-red-400 transition-colors">
                                 {edu.institution}
                               </h3>
-                              <span className="px-3 py-1 text-xs bg-red-500/20 text-red-400 rounded-full border border-red-500/30">
+                              {/* <span className="px-3 py-1 text-xs bg-red-500/20 text-red-400 rounded-full border border-red-500/30">
                                 {edu.year}
-                              </span>
+                              </span> */}
                             </div>
                             <p className="text-gray-300 font-medium mb-1">{edu.degree}</p>
-                            <p className="text-gray-500">{edu.grade}</p>
+                            {/* <p className="text-gray-500">{edu.grade}</p> */}
                           </div>
                         </div>
                       ))}
