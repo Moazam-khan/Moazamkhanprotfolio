@@ -44,13 +44,13 @@ function ContactUs() {
     {
       icon: FaPhone,
       title: "Phone",
-      value: "+92 XXX XXXXXXX",
-      link: "tel:+92XXXXXXXXX"
+      value: "0511429371",
+      link: "0511429371"
     },
     {
       icon: FaMapMarkerAlt,
       title: "Location",
-      value: "Abbottabad, Pakistan",
+      value: "Medina, KSA",
       link: null
     }
   ];
