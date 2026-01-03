@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Moazam Khan Portfolio",
     images: [
       {
-        url: "/mky.png", // Add your OG image path
+        url: "/mky.jpeg", // Add your OG image path
         width: 1200,
         height: 630,
         alt: "Moazam Khan Portfolio"
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Moazam Khan | Full-Stack Web Developer",
     description: "Full-Stack Web Developer specializing in Next.js, React, MongoDB, and modern web technologies.",
-    images: ["/mky.png"], // Add your OG image path
+    images: ["/mky.jpeg"], // Add your OG image path
     creator: "@mohdmoazamkhan", // Replace with your Twitter username
   },
   robots: {
