@@ -17,7 +17,7 @@ const Leftside = () => {
   const socialLinks = [
     { 
       icon: FaWhatsapp, 
-      href: "https://web.whatsapp.com", 
+      href: "https://web.whatsapp.com/send?phone=+966511096113", 
       color: "hover:text-green-500 hover:shadow-green-500/50",
       label: "WhatsApp"
     },
