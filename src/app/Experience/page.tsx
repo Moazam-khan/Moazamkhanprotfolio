@@ -6,6 +6,16 @@ import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt, FaStar } from "react-icons/
 export default function Experiences() {
   const experiences = [
     {
+      company: "Gems and Minerals Paradise - Freelance Project",
+      location: "Thailand (In Progress)",
+      role: "Full-Stack Web Developer",
+      period: "2025 - Present",
+      type: "Freelance",
+      description: "Building a comprehensive multi-currency e-commerce marketplace for Gems and Minerals Paradise (www.gemsandmineralsparadise.com). Developing advanced vendor dashboards for inventory management, implementing an admin panel for platform oversight, integrating AI-powered chat support using GPT-4 for customer assistance, and setting up dual payment gateway integration with Stripe and PayPal for seamless transactions.",
+      technologies: ["Next.js", "Stripe", "PayPal API", "OpenAI GPT-4", "Multi-currency", "MongoDB"],
+      highlights: ["Multi-currency Marketplace", "AI Chat Support", "Vendor Dashboards", "Payment Integration"]
+    },
+    {
       company: "HAG Safari - Freelance Project",
       location: "Dubai, UAE",
       role: "Full-Stack Web Developer",

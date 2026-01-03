@@ -38,14 +38,14 @@ function ContactUs() {
     {
       icon: FaEnvelope,
       title: "Email",
-      value: "moazamkhan@example.com",
-      link: "mailto:moazamkhan@example.com"
+      value: "contact@moazamkhan.com",
+      link: "mailto:contact@moazamkhan.com",
     },
     {
       icon: FaPhone,
       title: "Phone",
-      value: "0511429371",
-      link: "0511429371"
+      value: "+966 51 109 6113",
+      link: "+966 51 109 6113",
     },
     {
       icon: FaMapMarkerAlt,
