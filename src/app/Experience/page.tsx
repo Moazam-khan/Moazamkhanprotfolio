@@ -1,25 +1,24 @@
 ﻿'use client'
 
 import React from "react";
-import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt, FaStar } from "react-icons/fa";
+import { FaBriefcase,  FaMapMarkerAlt, FaStar } from "react-icons/fa";
 
 export default function Experiences() {
   const experiences = [
+    
     {
-      company: "HAG Safari - Freelance Project",
+      company: "gemsandmineralsparadise",
       location: "Dubai, UAE",
       role: "Full-Stack Web Developer",
-      period: "Jul 2025",
       type: "Freelance",
-      description: "Developed and deployed a high-performance full-stack web application for HAG (www.hag.ae). Implemented secure PayPal payment integration for online transactions, automated email notifications using Resend, and designed a scalable backend with Next.js API routes and MongoDB. Deployed on Cloudflare with a custom domain purchased from Hostinger.",
-      technologies: ["Next.js", "MongoDB", "PayPal API", "Resend", "Cloudflare"],
-      highlights: ["PayPal Integration", "Email Automation", "Full-Stack Development"]
+      description: "Created and deployed a full-stack web platform for UJ Easy Life (www.ujeasylife.com), a Dubai-based cleaning service provider offering general cleaning, AC cleaning, and painting services. Designed a responsive and user-friendly interface using Next.js and Tailwind CSS, implemented booking functionality, integrated MongoDB for efficient data management, and automated email notifications using Resend.",
+      technologies: ["Next.js", "Tailwind CSS", "MongoDB", "Resend", "Vercel"],
+      highlights: ["Booking System", "Responsive Design", "Email Notifications"]
     },
     {
       company: "UJ Easy Life - Freelance Project",
       location: "Dubai, UAE",
       role: "Full-Stack Web Developer",
-      period: "Aug 2025",
       type: "Freelance",
       description: "Created and deployed a full-stack web platform for UJ Easy Life (www.ujeasylife.com), a Dubai-based cleaning service provider offering general cleaning, AC cleaning, and painting services. Designed a responsive and user-friendly interface using Next.js and Tailwind CSS, implemented booking functionality, integrated MongoDB for efficient data management, and automated email notifications using Resend.",
       technologies: ["Next.js", "Tailwind CSS", "MongoDB", "Resend", "Vercel"],
@@ -29,7 +28,7 @@ export default function Experiences() {
       company: "Selsla Technology",
       location: "Riyadh, Saudi Arabia (Remote)",
       role: "Junior Full Stack Developer",
-      period: "Jan 2025 - Mar 2025",
+    
       type: "Full-time",
       description: "Developed reusable UI components and a secure admin dashboard for legal service platforms. Implemented custom API endpoints, integrated Multer for file uploads, and managed both frontend and backend using Next.js, Express, MongoDB, MySQL, and Prisma. Contributed to two major projects: Lawyer Login Portal (rawdhat.com/login) and Legal Services Platform (alaqeel.hadnat.site).",
       technologies: ["Next.js", "Express", "MongoDB", "MySQL", "Prisma", "Multer"],
@@ -39,7 +38,7 @@ export default function Experiences() {
       company: "Selsla Technology",
       location: "Riyadh, Saudi Arabia (Remote)",
       role: "Next.js Intern",
-      period: "Dec 2024",
+ 
       type: "Internship",
       description: "Worked on a lawyer's website using Next.js. Fixed UI bugs, optimized performance, and ensured responsive design using Git for collaboration.",
       technologies: ["Next.js", "Git", "Responsive Design"],
@@ -49,7 +48,7 @@ export default function Experiences() {
       company: "Federal Board of Revenue (FBR)",
       location: "Abbottabad, Pakistan",
       role: "Frontend & Networking Intern",
-      period: "May 2024 – Sep 2024",
+   
       type: "Internship",
       description: "Built responsive UIs with HTML, CSS, JavaScript, and React. Gained experience in networking, version control, and team collaboration.",
       technologies: ["HTML", "CSS", "JavaScript", "React", "Networking"],
@@ -104,8 +103,8 @@ export default function Experiences() {
                       </span>
                       
                       <div className="flex items-center space-x-1 text-gray-400 text-sm">
-                        <FaCalendarAlt className="text-xs" />
-                        <span>{exp.period}</span>
+                        {/* <FaCalendarAlt className="text-xs" />
+                        <span>{exp.period}</span> */}
                       </div>
                     </div>
 
