@@ -6,15 +6,15 @@ import { FaBriefcase,  FaMapMarkerAlt, FaStar } from "react-icons/fa";
 export default function Experiences() {
   const experiences = [
     
-    {
-      company: "gemsandmineralsparadise",
-      location: "Dubai, UAE",
-      role: "Full-Stack Web Developer",
-      type: "Freelance",
-      description: "Created and deployed a full-stack web platform for UJ Easy Life (www.ujeasylife.com), a Dubai-based cleaning service provider offering general cleaning, AC cleaning, and painting services. Designed a responsive and user-friendly interface using Next.js and Tailwind CSS, implemented booking functionality, integrated MongoDB for efficient data management, and automated email notifications using Resend.",
-      technologies: ["Next.js", "Tailwind CSS", "MongoDB", "Resend", "Vercel"],
-      highlights: ["Booking System", "Responsive Design", "Email Notifications"]
-    },
+   {
+  company: "Gems and Minerals Paradise",
+  location: "Thailand",
+  role: "Full-Stack Web Developer",
+  type: "Freelance",
+  description: "Developing (in progress) a full-featured multi-currency online marketplace at www.gemsandmineralsparadise.com for gems, minerals, crystals, and related products. Built with modern full-stack technologies, including vendor dashboards, inventory management system, comprehensive admin panel, integrated AI support powered by GPT-4, and secure payment gateways via Stripe and PayPal.",
+  technologies: ["Next.js", "Tailwind CSS", "Supabase", "Resend", "Vercel", "Stripe", "PayPal", "GPT-4 (AI integration)","n8n"],
+  highlights: ["Multi-Currency Support", "Vendor Dashboards", "Inventory Management", "Admin Panel", "AI GPT-4 Integration", "Stripe + PayPal Payments"]
+},
     {
       company: "UJ Easy Life - Freelance Project",
       location: "Dubai, UAE",
