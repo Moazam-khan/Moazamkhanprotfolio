@@ -96,39 +96,69 @@ const EducationAndSkills: React.FC = () => {
   ];
 
   const achievementsData = [
-    { 
-      title: "Executive Member & Ambassador", 
-      description: "LET'S HELP WELFARE SOCIETY, UET Peshawar",
+    {
+      title: "Appreciation Certificate — Prime Minister's Office of Pakistan",
+      description: "Recognized for contribution to the Green Youth Movement environmental initiative (2024).",
       icon: FaAward
     },
-    { 
-      title: "Assistant to Director", 
-      description: "Prime Minister's Laptop Scheme Phase-II, Pakistan (2023)",
+    {
+      title: "Recognition Shield — Prime Minister's Laptop Scheme, Phase-II",
+      description: "Served as Assistant to Director during the national distribution programme at UET Peshawar.",
       icon: FaAward
     },
-    { 
-      title: "Appreciation Certificate Recipient", 
-      description: "Prime Minister's Office of Pakistan – Green Youth Movement Club",
+    {
+      title: "Executive Member & Campus Ambassador",
+      description: "Let's Help Welfare Society, UET Peshawar (2021–2023). Coordinated awareness drives including a Blood Donation Awareness Seminar.",
+      icon: FaAward
+    },
+    {
+      title: "Anti-Narcotics Society, UET Peshawar",
+      description: "Participated in the National Seminar on Drug Addiction Awareness.",
+      icon: FaAward
+    },
+    {
+      title: "UET Sports Society Expo 2024",
+      description: "Active participant in the university-wide sports expo.",
+      icon: FaAward
+    },
+    {
+      title: "Riyadh Cricket League (RCL), KSA",
+      description: "Active player in the Riyadh Cricket League, Saudi Arabia.",
+      icon: FaAward
+    },
+    {
+      title: "Languages",
+      description: "English — Proficient (UET Certificate) · Urdu and Pashto — Native · Arabic — Basic.",
       icon: FaAward
     },
   ];
 
   const certificationData = [
-    { 
-      title: "Responsive Web Design Certification", 
-      description: "FreeCodeCamp: HTML, CSS, Flexbox, and Grid",
+    {
+      title: "CCNA: Introduction to Networks",
+      description: "Cisco Networking Academy (2025).",
       icon: FaCertificate
     },
-    { 
-      title: "Back End Development and APIs Certification", 
-      description: "FreeCodeCamp: Node.js, Express, MongoDB, and APIs",
+    {
+      title: "CCNA: Switching, Routing, and Wireless Essentials",
+      description: "Cisco Networking Academy (2025).",
       icon: FaCertificate
     },
-    { 
-      title: "CCNA Certification", 
-      description: "Cisco Certified Network Associate",
+    {
+      title: "CCNA: Enterprise Networking, Security, and Automation",
+      description: "Cisco Networking Academy (2025).",
       icon: FaCertificate
-    }
+    },
+    {
+      title: "Responsive Web Design Developer Certification",
+      description: "freeCodeCamp (2025) — HTML, CSS, Flexbox, and Grid.",
+      icon: FaCertificate
+    },
+    {
+      title: "Back End Development and APIs Developer Certification",
+      description: "freeCodeCamp (2025) — Node.js, Express, MongoDB, and REST APIs.",
+      icon: FaCertificate
+    },
   ];
 
   const sections = [
