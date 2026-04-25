@@ -12,13 +12,13 @@ const CONTACT_INFO = [
   {
     icon: FaPhone,
     title: "Phone",
-    value: "0511429371",
-    link: "tel:0511429371"
+    value: "+996511096113",
+    link: "tel:+996511096113"
   },
   {
     icon: FaMapMarkerAlt,
     title: "Location",
-    value: "Medina, KSA",
+    value: "Riyadh, KSA",
     link: null
   }
 ];
@@ -26,7 +26,7 @@ const CONTACT_INFO = [
 const SOCIAL_LINKS = [
   { icon: FaGithub, link: "https://github.com/Moazam-khan", label: "GitHub", color: "hover:text-purple-500" },
   { icon: FaLinkedin, link: "https://www.linkedin.com/in/moazam-khan-089406319/", label: "LinkedIn", color: "hover:text-blue-500" },
-  { icon: FaWhatsapp, link: "https://web.whatsapp.com", label: "WhatsApp", color: "hover:text-green-500" }
+  { icon: FaWhatsapp, link: "https://wa.me/996511096113", label: "WhatsApp", color: "hover:text-green-500" }
 ];
 
 function ContactUs() {
