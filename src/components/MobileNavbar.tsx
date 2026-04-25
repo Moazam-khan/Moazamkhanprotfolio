@@ -5,33 +5,48 @@ import { FaHome, FaProjectDiagram, FaGraduationCap, FaEnvelope, FaBars, FaTimes,
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+const NAV_ITEMS = [
+  { href: "/", icon: FaHome, label: "Home" },
+  { href: "/Projects", icon: FaProjectDiagram, label: "Projects" },
+  { href: "/Experience", icon: FaBriefcase, label: "Experience" },
+  { href: "/Education", icon: FaGraduationCap, label: "Education" },
+  { href: "/Contact", icon: FaEnvelope, label: "Contact" },
+];
+
 export default function MobileNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
+    let scrollFrame = 0;
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (scrollFrame) {
+        return;
+      }
+
+      scrollFrame = window.requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 20);
+        scrollFrame = 0;
+      });
     };
 
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollFrame) {
+        window.cancelAnimationFrame(scrollFrame);
+      }
+    };
   }, []);
 
   // Close menu when route changes
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
-
-  const navItems = [
-    { href: "/", icon: FaHome, label: "Home" },
-    { href: "/Projects", icon: FaProjectDiagram, label: "Projects" },
-    { href: "/Experience", icon: FaBriefcase, label: "Experience" },
-    { href: "/Education", icon: FaGraduationCap, label: "Education" },
-    { href: "/Contact", icon: FaEnvelope, label: "Contact" },
-  ];
 
   return (
     <>
@@ -82,7 +97,7 @@ export default function MobileNavbar() {
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
           {/* Navigation Items */}
-          {navItems.map((item, idx) => {
+          {NAV_ITEMS.map((item, idx) => {
             const Icon = item.icon;
             const isActive = pathname === item.href;
 

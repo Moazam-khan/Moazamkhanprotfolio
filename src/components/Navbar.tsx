@@ -7,39 +7,52 @@ import { usePathname } from "next/navigation";
 import MobileNavbar from "./MobileNavbar";
 import { FaBriefcase } from "react-icons/fa6";
 
+const NAV_ITEMS = [
+  { href: "/", icon: FaHome, label: "Home" },
+  { href: "/Projects", icon: FaProjectDiagram, label: "Projects" },
+  { href: "/Experience", icon: FaBriefcase, label: "Experience" },
+  { href: "/Education", icon: FaGraduationCap, label: "Education" },
+  { href: "/Contact", icon: FaEnvelope, label: "Contact" },
+];
+
 export default function Navbar() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    let scrollFrame = 0;
+
+    const handleResize = (event?: MediaQueryListEvent) => {
+      setIsMobile(event ? event.matches : mediaQuery.matches);
     };
 
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (scrollFrame) {
+        return;
+      }
+
+      scrollFrame = window.requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 20);
+        scrollFrame = 0;
+      });
     };
 
     handleResize();
     handleScroll();
 
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleScroll);
+    mediaQuery.addEventListener("change", handleResize);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      mediaQuery.removeEventListener("change", handleResize);
       window.removeEventListener("scroll", handleScroll);
+      if (scrollFrame) {
+        window.cancelAnimationFrame(scrollFrame);
+      }
     };
   }, []);
-
-  const navItems = [
-    { href: "/", icon: FaHome, label: "Home" },
-    { href: "/Projects", icon: FaProjectDiagram, label: "Projects" },
-    { href: "/Experience", icon: FaBriefcase, label: "Experience" },
-    { href: "/Education", icon: FaGraduationCap, label: "Education" },
-    { href: "/Contact", icon: FaEnvelope, label: "Contact" },
-  ];
 
   return (
     <div className={`fixed w-full z-50 transition-all duration-300 ${
@@ -52,7 +65,7 @@ export default function Navbar() {
       ) : (
         <nav className="hidden md:flex items-center justify-center px-8 py-5">
           <div className="flex items-center space-x-2 bg-black/40 backdrop-blur-lg border border-white/10 rounded-full px-8 py-3 shadow-xl">
-            {navItems.map((item) => {
+            {NAV_ITEMS.map((item) => {
               const Icon = item.icon;
               const isActive = pathname === item.href;
               

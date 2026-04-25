@@ -1,6 +1,33 @@
 'use client';
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useEffect, useRef, useState } from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaWhatsapp, FaPaperPlane } from 'react-icons/fa';
+
+const CONTACT_INFO = [
+  {
+    icon: FaEnvelope,
+    title: "Email",
+    value: "moazamkhan@example.com",
+    link: "mailto:moazamkhan@example.com"
+  },
+  {
+    icon: FaPhone,
+    title: "Phone",
+    value: "0511429371",
+    link: "tel:0511429371"
+  },
+  {
+    icon: FaMapMarkerAlt,
+    title: "Location",
+    value: "Medina, KSA",
+    link: null
+  }
+];
+
+const SOCIAL_LINKS = [
+  { icon: FaGithub, link: "https://github.com/Moazam-khan", label: "GitHub", color: "hover:text-purple-500" },
+  { icon: FaLinkedin, link: "https://www.linkedin.com/in/moazam-khan-089406319/", label: "LinkedIn", color: "hover:text-blue-500" },
+  { icon: FaWhatsapp, link: "https://web.whatsapp.com", label: "WhatsApp", color: "hover:text-green-500" }
+];
 
 function ContactUs() {
   const [formData, setFormData] = useState({
@@ -10,15 +37,16 @@ function ContactUs() {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const submitTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((current) => ({
+      ...current,
       [name]: value
-    });
+    }));
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -26,7 +54,7 @@ function ContactUs() {
     setIsSubmitting(true);
     
     // Simulate form submission
-    setTimeout(() => {
+    submitTimeoutRef.current = setTimeout(() => {
       console.log('Submitted:', formData);
       alert('Thank you for your message! I Will get back to you soon.');
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -34,32 +62,13 @@ function ContactUs() {
     }, 1000);
   };
 
-  const contactInfo = [
-    {
-      icon: FaEnvelope,
-      title: "Email",
-      value: "moazamkhan@example.com",
-      link: "mailto:moazamkhan@example.com"
-    },
-    {
-      icon: FaPhone,
-      title: "Phone",
-      value: "0511429371",
-      link: "0511429371"
-    },
-    {
-      icon: FaMapMarkerAlt,
-      title: "Location",
-      value: "Medina, KSA",
-      link: null
-    }
-  ];
-
-  const socialLinks = [
-    { icon: FaGithub, link: "https://github.com/Moazam-khan", label: "GitHub", color: "hover:text-purple-500" },
-    { icon: FaLinkedin, link: "https://www.linkedin.com/in/moazam-khan-089406319/", label: "LinkedIn", color: "hover:text-blue-500" },
-    { icon: FaWhatsapp, link: "https://web.whatsapp.com", label: "WhatsApp", color: "hover:text-green-500" }
-  ];
+  useEffect(() => {
+    return () => {
+      if (submitTimeoutRef.current) {
+        clearTimeout(submitTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black py-24 px-4 sm:px-6 lg:px-8">
@@ -79,7 +88,7 @@ function ContactUs() {
           <div className="space-y-8 animate-fadeInUp">
             {/* Contact Cards */}
             <div className="space-y-4">
-              {contactInfo.map((info, idx) => {
+              {CONTACT_INFO.map((info, idx) => {
                 const Icon = info.icon;
                 return (
                   <div
@@ -113,7 +122,7 @@ function ContactUs() {
             <div className="glass-effect rounded-2xl p-6 border border-white/10">
               <h3 className="text-xl font-bold text-white mb-4">Connect With Me</h3>
               <div className="flex space-x-4">
-                {socialLinks.map((social, idx) => {
+                {SOCIAL_LINKS.map((social, idx) => {
                   const Icon = social.icon;
                   return (
                     <a

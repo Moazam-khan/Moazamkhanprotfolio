@@ -1,15 +1,42 @@
 'use client'
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import ExportedImage from "next-image-export-optimizer";
 import { FaExternalLinkAlt, FaGithub, FaStar } from "react-icons/fa";
 
-export default function Projects() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
-
-  const cardData = [
-       {
+const CARD_DATA = [
+    {
       id: 0,
+      title: "Gemsandmineralsparadise",
+      description: "Full-stack booking platform Digital and Development automation services and automated email and whatsapp notifications for selling gems and minerals ",
+      image: "/assets/gem.png",
+      link: "https://www.Gemsandmineralsparadise.com",
+      github: "https://github.com/Moazam-khan",
+      tags: ["Next.js", "Supabase","Resend"],
+      featured: true
+    },
+      {
+      id: 1,
+      title: "OwnItDigital",
+      description: "Compny website for OwnItDigital, a leading digital solutions provider in the UK, showcasing their services and portfolio",
+      image: "/assets/own.png",
+      link: "https://www.ownitdigital.co.uk/",
+      github: "https://github.com/Moazam-khan",
+      tags: ["Next.js", "MongoDB","Resend"],
+      featured: true
+    },
+      {
+      id: 2,
+      title: "WhippyBrother",
+      description: "Compny website for WhippyBrother, selling ice creams and desserts in the UK, showcasing their menu and locations and booking system",
+      image: "/assets/wb.png",
+      link: "https://whippybrother.vercel.app/",
+      github: "https://github.com/Moazam-khan",
+      tags: ["Next.js", "MongoDB","Resend"],
+      featured: true
+    },
+  {
+      id: 3,
       title: "Saf Automation LLC",
       description: "Full-stack booking platform Digital and Development automation services and automated email and whatsapp notifications",
       image: "/assets/saf.png",
@@ -19,7 +46,7 @@ export default function Projects() {
       featured: true
     },
     {
-      id: 1,
+      id: 4,
       title: "Hag Safari",
       description: "Full-stack booking platform with PayPal integration and automated email notifications",
       image: "/assets/hag.png",
@@ -29,7 +56,7 @@ export default function Projects() {
       featured: true
     },
     {
-      id: 2,
+      id: 5,
       title: "UJEasyLife",
       description: "Service booking platform for cleaning solutions in Dubai",
       image: "/assets/uj.png",
@@ -39,7 +66,7 @@ export default function Projects() {
       featured: true
     },
     {
-      id: 3,
+      id: 6,
       title: "Alaqeel",
       description: "Legal services platform with secure admin dashboard",
       image: "/assets/alaqeel.png",
@@ -49,7 +76,7 @@ export default function Projects() {
       featured: true
     },
     {
-      id: 4,
+      id: 7,
       title: "Rawdhat",
       description: "Lawyer login portal with authentication system",
       image: "/assets/rahwat.png",
@@ -58,7 +85,7 @@ export default function Projects() {
       tags: ["React", "Auth", "API"]
     },
     {
-      id: 5,
+      id: 8,
       title: "Desert Safari Ride",
       description: "Modern travel booking website with stunning UI",
       image: "/assets/desertsafari.png",
@@ -67,7 +94,7 @@ export default function Projects() {
       tags: ["Next.js", "Vercel"]
     },
     {
-      id: 6,
+      id: 9,
       title: "OTP Authentication",
       description: "Secure email-based OTP verification system",
       image: "/assets/otp.png",
@@ -76,7 +103,7 @@ export default function Projects() {
       tags: ["Next.js", "Auth", "Email"]
     },
     {
-      id: 7,
+      id: 10,
       title: "Neardear Chatroom",
       description: "Real-time chat application",
       image: "/assets/chat.png",
@@ -85,7 +112,7 @@ export default function Projects() {
       tags: ["React", "WebSocket"]
     },
     {
-      id: 8,
+      id: 11,
       title: "Desert Safari",
       description: "Interactive safari tour website",
       image: "/assets/desert.png",
@@ -94,7 +121,7 @@ export default function Projects() {
       tags: ["React", "CSS3"]
     },
     {
-      id: 9,
+      id: 12,
       title: "TechHealth",
       description: "Healthcare management dashboard",
       image: "/assets/techcare.png",
@@ -103,7 +130,7 @@ export default function Projects() {
       tags: ["React", "Dashboard"]
     },
     {
-      id: 10,
+      id: 13,
       title: "Tic Tac Toe",
       description: "Classic game with modern UI",
       image: "/assets/Tectoe.png",
@@ -112,7 +139,7 @@ export default function Projects() {
       tags: ["JavaScript", "Game"]
     },
     {
-      id: 11,
+      id: 14,
       title: "Currency Converter",
       description: "Real-time currency exchange rates",
       image: "/assets/curren.png",
@@ -121,7 +148,7 @@ export default function Projects() {
       tags: ["React", "API"]
     },
     {
-      id: 12,
+      id: 15,
       title: "Pladin",
       description: "Modern web application",
       image: "/assets/Pladin.png",
@@ -130,7 +157,7 @@ export default function Projects() {
       tags: ["React", "UI"]
     },
     {
-      id: 13,
+      id: 16,
       title: "Todo with Context API",
       description: "Task management using Context API",
       image: "/assets/TodoCapi.png",
@@ -139,7 +166,7 @@ export default function Projects() {
       tags: ["React", "Context API"]
     },
     {
-      id: 14,
+      id: 17,
       title: "Todo with Redux",
       description: "State management with Redux Toolkit",
       image: "/assets/todoredux.png",
@@ -148,16 +175,17 @@ export default function Projects() {
       tags: ["React", "Redux"]
     },
     {
-      id: 15,
+      id: 18,
       title: "React Router Demo",
       description: "Routing examples and navigation",
       image: "/assets/Reactrouter.png",
       link: "https://rrd-react-router-dom.netlify.app",
       github: "https://github.com/Moazam-khan",
       tags: ["React", "Router"]
-    },
-  ];
+  },
+];
 
+export default function Projects() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black py-24 px-4 sm:px-6 lg:px-8">
       {/* Header Section */}
@@ -177,13 +205,11 @@ export default function Projects() {
 
       {/* Projects Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {cardData.map((card, index) => (
+        {CARD_DATA.map((card, index) => (
           <div
             key={card.id}
             className="group relative animate-fadeInUp"
             style={{ animationDelay: `${index * 0.1}s` }}
-            onMouseEnter={() => setHoveredId(card.id)}
-            onMouseLeave={() => setHoveredId(null)}
           >
             {/* Card glow effect */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-orange-500 rounded-2xl opacity-0 group-hover:opacity-75 blur transition duration-500" />
@@ -214,9 +240,7 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
                 
                 {/* Quick action buttons on hover */}
-                <div className={`absolute inset-0 flex items-center justify-center space-x-3 transition-all duration-500 ${
-                  hoveredId === card.id ? 'opacity-100' : 'opacity-0'
-                }`}>
+                <div className="absolute inset-0 flex items-center justify-center space-x-3 opacity-0 transition-all duration-500 group-hover:opacity-100">
                   <Link
                     href={card.link}
                     target="_blank"

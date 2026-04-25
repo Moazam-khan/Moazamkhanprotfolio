@@ -177,13 +177,8 @@ const EducationAndSkills: React.FC = () => {
             <div className="glass-effect rounded-2xl p-6 border border-white/10">
               <h3 className="text-xl font-bold text-white mb-3">About Me</h3>
               <p className="text-gray-400 leading-relaxed text-sm">
-              Results-driven Full Stack Developer with 4+ years of professional experience delivering enterprise-grade web applications for
-international clients across Saudi Arabia, UAE, Thailand, Pakistan, and global markets. Proven expertise in building scalable
-platforms, e-commerce solutions, business automation systems, and enterprise email infrastructure using React.js, Next.js,
-Node.js/Express, and modern cloud technologies. Specialized in payment gateway integration (PayPal, Stripe), AI chatbot imple
-mentation, DNS configuration, email deliverability optimization, SEO achieving 95+ Lighthouse scores, and complex database
-architecture. Published deep learning researcher (99.77% model accuracy) and CCNA certified network professional.Skilled in
-reducing API response times, boosting organic traffic, and delivering production-ready applications for high-traffic environments.
+Full Stack Developer, AI & Networking Engineer experienced in building scalable web applications and enterprise systems. Skilled in React.js, Next.js, Node.js, cloud technologies, and payment integrations. Proficient in AI solutions, network infrastructure (CCNA), and performance optimization, delivering secure, high-performance applications for global clients.
+
               </p>
             </div>
           </div>

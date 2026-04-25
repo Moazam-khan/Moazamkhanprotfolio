@@ -1,7 +1,60 @@
 "use client";
 import { cn } from "@/utils/cn";
 import { motion, AnimatePresence } from "framer-motion";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useMemo } from "react";
+
+const BEAMS = [
+  {
+    initialX: 10,
+    translateX: 10,
+    duration: 7,
+    repeatDelay: 3,
+    delay: 2,
+  },
+  {
+    initialX: 600,
+    translateX: 600,
+    duration: 3,
+    repeatDelay: 3,
+    delay: 4,
+  },
+  {
+    initialX: 100,
+    translateX: 100,
+    duration: 7,
+    repeatDelay: 7,
+    className: "h-6",
+  },
+  {
+    initialX: 400,
+    translateX: 400,
+    duration: 5,
+    repeatDelay: 14,
+    delay: 4,
+  },
+  {
+    initialX: 800,
+    translateX: 800,
+    duration: 11,
+    repeatDelay: 2,
+    className: "h-20",
+  },
+  {
+    initialX: 1000,
+    translateX: 1000,
+    duration: 4,
+    repeatDelay: 2,
+    className: "h-12",
+  },
+  {
+    initialX: 1200,
+    translateX: 1200,
+    duration: 6,
+    repeatDelay: 4,
+    delay: 2,
+    className: "h-6",
+  },
+];
 
 export const BackgroundBeamsWithCollision = ({
   children,
@@ -12,59 +65,24 @@ export const BackgroundBeamsWithCollision = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
+  const [showBeams, setShowBeams] = useState(false);
 
-  const beams = [
-    {
-      initialX: 10,
-      translateX: 10,
-      duration: 7,
-      repeatDelay: 3,
-      delay: 2,
-    },
-    {
-      initialX: 600,
-      translateX: 600,
-      duration: 3,
-      repeatDelay: 3,
-      delay: 4,
-    },
-    {
-      initialX: 100,
-      translateX: 100,
-      duration: 7,
-      repeatDelay: 7,
-      className: "h-6",
-    },
-    {
-      initialX: 400,
-      translateX: 400,
-      duration: 5,
-      repeatDelay: 14,
-      delay: 4,
-    },
-    {
-      initialX: 800,
-      translateX: 800,
-      duration: 11,
-      repeatDelay: 2,
-      className: "h-20",
-    },
-    {
-      initialX: 1000,
-      translateX: 1000,
-      duration: 4,
-      repeatDelay: 2,
-      className: "h-12",
-    },
-    {
-      initialX: 1200,
-      translateX: 1200,
-      duration: 6,
-      repeatDelay: 4,
-      delay: 2,
-      className: "h-6",
-    },
-  ];
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(
+      "(prefers-reduced-motion: reduce), (max-width: 767px)"
+    );
+
+    const updateVisibility = (event?: MediaQueryListEvent) => {
+      setShowBeams(!(event ? event.matches : mediaQuery.matches));
+    };
+
+    updateVisibility();
+    mediaQuery.addEventListener("change", updateVisibility);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateVisibility);
+    };
+  }, []);
 
   return (
     <div
@@ -75,14 +93,15 @@ export const BackgroundBeamsWithCollision = ({
         className
       )}
     >
-      {beams.map((beam) => (
-        <CollisionMechanism
-          key={beam.initialX + "beam-idx"}
-          beamOptions={beam}
-          containerRef={containerRef}
-          parentRef={parentRef}
-        />
-      ))}
+      {showBeams &&
+        BEAMS.map((beam) => (
+          <CollisionMechanism
+            key={beam.initialX + "beam-idx"}
+            beamOptions={beam}
+            containerRef={containerRef}
+            parentRef={parentRef}
+          />
+        ))}
 
       {children}
       <div
@@ -114,7 +133,7 @@ const CollisionMechanism = React.forwardRef<
       repeatDelay?: number;
     };
   }
->(({ parentRef, containerRef, beamOptions = {} }, ) => {
+>(({ parentRef, containerRef, beamOptions = {} }) => {
   const beamRef = useRef<HTMLDivElement>(null);
   const [collision, setCollision] = useState<{
     detected: boolean;
@@ -125,6 +144,9 @@ const CollisionMechanism = React.forwardRef<
   });
   const [beamKey, setBeamKey] = useState(0);
   const [cycleCollisionDetected, setCycleCollisionDetected] = useState(false);
+  const resetTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const beamTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const frameRef = useRef<number | null>(null);
 
   useEffect(() => {
     const checkCollision = () => {
@@ -153,24 +175,39 @@ const CollisionMechanism = React.forwardRef<
           setCycleCollisionDetected(true);
         }
       }
+
+      frameRef.current = window.requestAnimationFrame(checkCollision);
     };
 
-    const animationInterval = setInterval(checkCollision, 50);
+    frameRef.current = window.requestAnimationFrame(checkCollision);
 
-    return () => clearInterval(animationInterval);
+    return () => {
+      if (frameRef.current !== null) {
+        window.cancelAnimationFrame(frameRef.current);
+      }
+    };
   }, [cycleCollisionDetected, containerRef, parentRef]);
 
   useEffect(() => {
     if (collision.detected && collision.coordinates) {
-      setTimeout(() => {
+      resetTimeoutRef.current = setTimeout(() => {
         setCollision({ detected: false, coordinates: null });
         setCycleCollisionDetected(false);
       }, 2000);
 
-      setTimeout(() => {
+      beamTimeoutRef.current = setTimeout(() => {
         setBeamKey((prevKey) => prevKey + 1);
       }, 2000);
     }
+
+    return () => {
+      if (resetTimeoutRef.current) {
+        clearTimeout(resetTimeoutRef.current);
+      }
+      if (beamTimeoutRef.current) {
+        clearTimeout(beamTimeoutRef.current);
+      }
+    };
   }, [collision]);
 
   return (
@@ -224,13 +261,17 @@ const CollisionMechanism = React.forwardRef<
 CollisionMechanism.displayName = "CollisionMechanism";
 
 const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
-  const spans = Array.from({ length: 20 }, (_, index) => ({
-    id: index,
-    initialX: 0,
-    initialY: 0,
-    directionX: Math.floor(Math.random() * 80 - 40),
-    directionY: Math.floor(Math.random() * -50 - 10),
-  }));
+  const spans = useMemo(
+    () =>
+      Array.from({ length: 20 }, (_, index) => ({
+        id: index,
+        initialX: 0,
+        initialY: 0,
+        directionX: Math.floor(Math.random() * 80 - 40),
+        directionY: Math.floor(Math.random() * -50 - 10),
+      })),
+    []
+  );
 
   return (
     <div {...props} className={cn("absolute z-50 h-2 w-2", props.className)}>

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__figma__get_design_context",
+      "mcp__figma__get_screenshot",
+      "WebFetch(domain:www.figma.com)",
+      "Bash(curl:*)",
+      "Bash(ls:*)",
+      "Bash(powershell -Command \"$lines = Get-Content src/html/onboarding.html; $before = $lines[0..2747]; $after = $lines[2925..\\($lines.Length-1\\)]; $newContent = $before + '''' + ''      <!-- Step 10: Kickstart your TasteGraph -->'' + $after; $newContent | Set-Content src/html/onboarding.html -Encoding UTF8; Write-Host ''Done. Total lines:'' $newContent.Length\")",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(npx --no-install tsc --noEmit -p .)"
+    ]
+  }
+}
