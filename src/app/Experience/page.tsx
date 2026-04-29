@@ -1,7 +1,7 @@
 ﻿'use client'
 
 import React from "react";
-import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt, FaStar } from "react-icons/fa";
+import { FaBriefcase, FaMapMarkerAlt, FaStar } from "react-icons/fa";
 
 type Experience = {
   company: string;
@@ -40,7 +40,7 @@ const EXPERIENCES: Experience[] = [
     },
     {
       company: "Freelance — Full Stack Developer",
-      location: "Pakistan / Remote",
+      location: "Pakistan / ",
       role: "Full Stack Developer",
       type: "Freelance",
       // period: "June 2025 – Present",
@@ -50,7 +50,7 @@ const EXPERIENCES: Experience[] = [
     },
     {
       company: "Gems and Minerals Paradise",
-      location: "Thailand (Remote)",
+      location: "Thailand ",
       role: "Full-Stack Web Developer",
       type: "Freelance",
       // period: "2025 – Present (In Progress)",
@@ -61,7 +61,7 @@ const EXPERIENCES: Experience[] = [
     },
     {
       company: "HAG",
-      location: "UAE (Remote)",
+      location: "UAE ",
       role: "Full-Stack Web Developer",
       type: "Freelance",
       website: "hag.ae",
@@ -71,7 +71,7 @@ const EXPERIENCES: Experience[] = [
     },
     {
       company: "SAF Automation LLC",
-      location: "Remote",
+      location: "",
       role: "Full-Stack Web Developer",
       type: "Freelance",
       website: "safautmationllc.com",
@@ -81,7 +81,7 @@ const EXPERIENCES: Experience[] = [
     },
     {
       company: "Own It Digital",
-      location: "United Kingdom (Remote)",
+      location: "United Kingdom ",
       role: "Full-Stack Web Developer",
       type: "Freelance",
       website: "ownitdigital.co.uk",
@@ -91,7 +91,7 @@ const EXPERIENCES: Experience[] = [
     },
     {
       company: "Whippy Brother",
-      location: "Remote",
+      location: "",
       role: "Full-Stack Web Developer",
       type: "Freelance",
       website: "whippybrother.vercel.app",
@@ -101,7 +101,7 @@ const EXPERIENCES: Experience[] = [
     },
     {
       company: "UJ Easy Life",
-      location: "Dubai, UAE (Remote)",
+      location: "Dubai, UAE ",
       role: "Full-Stack Web Developer",
       type: "Freelance",
       website: "ujeasylife.com",
