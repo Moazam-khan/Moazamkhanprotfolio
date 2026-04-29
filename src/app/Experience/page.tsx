@@ -21,7 +21,7 @@ const EXPERIENCES: Experience[] = [
       location: "Riyadh, Saudi Arabia",
       role: "Full Stack Developer",
       type: "Full-time",
-      period: "February 2026 – Present",
+      // period: "February 2026 – Present",
       website: "www.b-it.co",
       description: "Developing scalable enterprise web applications using React.js, Next.js, and Node.js for clients in logistics and business operations. Implementing ZATCA-compliant e-invoicing integration in line with Saudi regulatory requirements, contributing to systems that handle live financial data. Integrating third-party REST APIs to automate workflows and improve data reliability across distributed services. Applying technical SEO and Core Web Vitals optimization, improving search visibility and measured page-performance metrics for enterprise clients.",
       technologies: ["React.js", "Next.js", "Node.js", "REST APIs", "ZATCA E-Invoicing", "Technical SEO", "Core Web Vitals"],
@@ -32,7 +32,7 @@ const EXPERIENCES: Experience[] = [
       location: "Riyadh, Saudi Arabia",
       role: "Full Stack Developer",
       type: "Full-time",
-      period: "January 2026 – February 2026",
+      // period: "January 2026 – February 2026",
       website: "feelgari.com, feelgarisculpture.com",
       description: "Managed two production websites end-to-end, including domain configuration, hosting infrastructure, and system security. Maintained uptime monitoring and routine technical operations, ensuring continuity for customer-facing platforms. Administered Google Business Profile and supporting digital-presence assets for brand visibility.",
       technologies: ["Next.js", "Hosting & DNS", "System Security", "Uptime Monitoring", "Google Business Profile"],
@@ -43,7 +43,7 @@ const EXPERIENCES: Experience[] = [
       location: "Pakistan / Remote",
       role: "Full Stack Developer",
       type: "Freelance",
-      period: "June 2025 – Present",
+      // period: "June 2025 – Present",
       description: "Built and deployed responsive web applications for small businesses and individual clients using React and modern JavaScript frameworks. Designed and integrated REST APIs supporting dynamic content, authentication, and scalable client functionality. Managed hosting, domain configuration, and on-page SEO for production deployments. Delivered projects include: HAG (hag.ae), SAF Automation LLC (safautmationllc.com), Gems and Minerals Paradise — in progress (gemsandmineralsparadise.com), Own It Digital (ownitdigital.co.uk), Whippy Brother (whippybrother.vercel.app), UJ Easy Life (ujeasylife.com), and the Moazam Khan Portfolio.",
       technologies: ["React", "Next.js", "Tailwind CSS", "Node.js", "MongoDB", "REST APIs", "Vercel", "On-Page SEO"],
       highlights: ["Responsive Web Apps", "REST API Integrations", "Hosting & Domain Setup", "On-Page SEO"]
@@ -53,7 +53,7 @@ const EXPERIENCES: Experience[] = [
       location: "Thailand (Remote)",
       role: "Full-Stack Web Developer",
       type: "Freelance",
-      period: "2025 – Present (In Progress)",
+      // period: "2025 – Present (In Progress)",
       website: "gemsandmineralsparadise.com",
       description: "Developing (in progress) a full-featured multi-currency online marketplace at gemsandmineralsparadise.com for gems, minerals, crystals, and related products. Built with modern full-stack technologies, including vendor dashboards, inventory management, a comprehensive admin panel, integrated AI support powered by GPT-4, and secure payment gateways via Stripe and PayPal.",
       technologies: ["Next.js", "Tailwind CSS", "Supabase", "Resend", "Vercel", "Stripe", "PayPal", "GPT-4 (AI integration)", "n8n"],
@@ -111,10 +111,10 @@ const EXPERIENCES: Experience[] = [
     },
     {
       company: "Selsla Technology",
-      location: "Riyadh, Saudi Arabia (Remote)",
+      location: "Riyadh, Saudi Arabia",
       role: "Full Stack Developer",
       type: "Full-time",
-      period: "December 2024 – May 2025",
+      // period: "December 2024 – May 2025",
       website: "www.selsla.net",
       description: "Developed and maintained a school portal serving administrators, teachers, and parents; integrated third-party APIs and contributed to UI/UX improvements that increased platform usability. Also built reusable UI components and a secure admin dashboard for legal service platforms (Lawyer Login Portal at rawdhat.com/login and Legal Services Platform at alaqeel.hadnat.site), implementing custom API endpoints and Multer-based file uploads. Collaborated within a small engineering team to deliver features under tight schedules.",
       technologies: ["Next.js", "Express", "MongoDB", "MySQL", "Prisma", "Multer", "REST APIs"],
@@ -125,7 +125,7 @@ const EXPERIENCES: Experience[] = [
       location: "Abbottabad, Pakistan",
       role: "Engineering Intern — Networking & Frontend Development",
       type: "Internship",
-      period: "May 2024 – September 2024",
+      // period: "May 2024 – September 2024",
       description: "Supported networking infrastructure operations and contributed to internal frontend development at a federal government office. Built responsive UIs with HTML, CSS, JavaScript, and React, and gained hands-on experience with networking, version control, and team collaboration. Recognized in a formal certificate for punctuality, professionalism, and consistent technical contribution.",
       technologies: ["HTML", "CSS", "JavaScript", "React", "Networking", "Git"],
       highlights: ["Responsive UI", "Networking Operations", "Version Control", "Formal Recognition"]
@@ -179,12 +179,12 @@ export default function Experiences() {
                         {exp.type}
                       </span>
 
-                      {exp.period && (
+                      {/* {exp.period && (
                         <div className="flex items-center space-x-1 text-gray-400 text-sm">
                           <FaCalendarAlt className="text-xs" />
                           <span>{exp.period}</span>
                         </div>
-                      )}
+                      )} */}
                     </div>
 
                     <h2 className="text-2xl font-bold text-white group-hover:text-red-400 transition-colors duration-300 mb-2">
