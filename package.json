@@ -1,35 +1,31 @@
 {
-  "name": "protfoliolat",
-  "version": "0.1.0",
+  "name": "moazam-khan-portfolio",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --hostname 127.0.0.1",
     "build": "next build",
-    "export": "next-image-export-optimizer",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "node scripts/serve.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --max-warnings 0",
+    "test": "node --test tests/*.test.mjs",
+    "format": "prettier --write src scripts tests *.json *.ts *.md"
   },
   "dependencies": {
-    "@tabler/icons-react": "^3.21.0",
-    "clsx": "^2.1.1",
-    "framer-motion": "^11.11.11",
-    "next": "15.0.7",
-    "next-image-export-optimizer": "^1.19.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.3.0",
-    "react-simple-typewriter": "^5.0.1",
-    "tailwind-merge": "^2.5.4"
+    "next": "15.5.28",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "overrides": {
+    "postcss": "8.5.32"
   },
   "devDependencies": {
-    "@types/css-modules": "^1.0.5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "15.0.3",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "15.5.28",
+    "prettier": "3.6.2",
+    "typescript": "^5.8.0"
   }
 }
