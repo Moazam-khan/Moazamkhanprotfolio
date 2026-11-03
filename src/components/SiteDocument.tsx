@@ -1,3 +1,4 @@
+import type { Locale } from "@/lib/locales";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -5,8 +6,9 @@ import { MotionProvider } from "@/components/MotionProvider";
 import { Footer } from "@/components/Footer";
 import { profile } from "@/data/profile";
 import { siteOrigin } from "@/lib/site";
-import "./globals.css";
-import "./polish.css";
+import "@/app/globals.css";
+import "@/app/polish.css";
+import "@/app/arabic.css";
 
 const sans = localFont({
   src: [
@@ -43,6 +45,7 @@ export const metadata: Metadata = {
     template: "%s — Moazam Khan",
   },
   description: profile.description,
+  icons: { icon: "/icon.svg", apple: "/apple-icon.png" },
   applicationName: "Moazam Khan Portfolio",
   authors: [{ name: profile.name, url: profile.linkedin }],
   robots: { index: !!siteOrigin, follow: !!siteOrigin },
@@ -72,9 +75,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export function SiteDocument({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  locale,
+}: {
+  children: React.ReactNode;
+  locale: Locale;
+}) {
+  const arabic = locale === "ar";
   const person = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -107,10 +115,14 @@ export default function RootLayout({
     ],
   };
   return (
-    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
+    <html
+      lang={locale}
+      dir={arabic ? "rtl" : "ltr"}
+      className={`${sans.variable} ${serif.variable}`}
+    >
       <body>
         <a className="skip-link" href="#main">
-          Skip to content
+          {arabic ? "انتقل إلى المحتوى" : "Skip to content"}
         </a>
         <noscript>
           <style>{`.motion-toggle,.menu-toggle,.filter-row button{display:none!important}.expertise-item [hidden]{display:block!important}@media(max-width:900px){.site-header{position:absolute;flex-wrap:wrap}.main-nav{display:flex;position:static;flex-direction:row;flex-wrap:wrap;padding:0;width:100%;border:0;background:none;gap:6px}.main-nav .nav-link{font:12px var(--sans);padding:10px 8px;border:0}.main-nav .nav-contact{font:12px var(--sans);padding:10px;margin:0}.mobile-arrow{display:none}.hero{padding-top:175px}.hero-portrait{top:180px}}`}</style>
@@ -121,10 +133,10 @@ export default function RootLayout({
             __html: JSON.stringify(person).replace(/</g, "\\u003c"),
           }}
         />
-        <MotionProvider>
-          <SiteHeader />
+        <MotionProvider locale={locale}>
+          <SiteHeader locale={locale} />
           <main id="main">{children}</main>
-          <Footer />
+          <Footer locale={locale} />
         </MotionProvider>
       </body>
     </html>

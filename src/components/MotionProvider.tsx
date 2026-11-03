@@ -1,5 +1,6 @@
 "use client";
 
+import type { Locale } from "@/lib/locales";
 import { createContext, useContext, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { MotionLayer } from "./MotionLayer";
@@ -9,8 +10,15 @@ export function useMotionEnabled() {
   return useContext(MotionContext);
 }
 
-export function MotionProvider({ children }: { children: React.ReactNode }) {
+export function MotionProvider({
+  children,
+  locale,
+}: {
+  children: React.ReactNode;
+  locale: Locale;
+}) {
   const pathname = usePathname();
+  const arabic = locale === "ar";
   const [enabled, setEnabled] = useState(false);
   const [reduced, setReduced] = useState(false);
 
@@ -269,20 +277,34 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
         disabled={reduced}
         title={
           reduced
-            ? "Animations follow your system’s reduced-motion preference"
+            ? arabic
+              ? "تتبع الحركة إعداد تقليل الحركة في جهازك"
+              : "Animations follow your system’s reduced-motion preference"
             : undefined
         }
         aria-pressed={enabled}
         aria-label={
           reduced
-            ? "Animations disabled by system preference"
+            ? arabic
+              ? "الحركة معطّلة حسب إعدادات الجهاز"
+              : "Animations disabled by system preference"
             : enabled
-              ? "Pause animations"
-              : "Enable animations"
+              ? arabic
+                ? "إيقاف الحركة"
+                : "Pause animations"
+              : arabic
+                ? "تشغيل الحركة"
+                : "Enable animations"
         }
       >
-        <span aria-hidden="true">{enabled ? "Ⅱ" : "▷"}</span> Motion{" "}
-        {enabled ? "on" : "off"}
+        <span aria-hidden="true">{enabled ? "Ⅱ" : "▷"}</span>{" "}
+        {arabic
+          ? enabled
+            ? "الحركة مفعّلة"
+            : "الحركة متوقفة"
+          : enabled
+            ? "Motion on"
+            : "Motion off"}
       </button>
     </MotionContext.Provider>
   );

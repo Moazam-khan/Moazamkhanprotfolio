@@ -15,8 +15,12 @@ function htmlFiles(directory) {
   });
 }
 
-test("exports every public section and 21 project case studies", () => {
-  for (const route of [
+test("exports matching English and Arabic pages with the correct language and direction", () => {
+  const cases = readdirSync(join(root, "work"), { withFileTypes: true }).filter(
+    (entry) => entry.isDirectory(),
+  );
+  assert.ok(cases.length >= 21, "Existing project pages must remain available");
+  const routes = [
     "",
     "work",
     "about",
@@ -24,15 +28,20 @@ test("exports every public section and 21 project case studies", () => {
     "Experience",
     "Education",
     "Contact",
-  ])
+    ...cases.map((entry) => "work/" + entry.name),
+  ];
+  for (const route of routes) {
+    const suffix = route ? route + "/" : "";
+    const english = readFileSync(join(root, route, "index.html"), "utf8");
+    const arabic = readFileSync(join(root, "ar", route, "index.html"), "utf8");
+    assert.match(english, /<html lang="en" dir="ltr"/, route);
+    assert.match(arabic, /<html lang="ar" dir="rtl"/, route);
     assert.ok(
-      existsSync(join(root, route, "index.html")),
-      `Missing ${route || "/"}`,
+      english.includes('href="/ar/' + suffix + '" hrefLang="ar"'),
+      route,
     );
-  const cases = readdirSync(join(root, "work")).filter((name) =>
-    statSync(join(root, "work", name)).isDirectory(),
-  );
-  assert.equal(cases.length, 21);
+    assert.ok(arabic.includes('href="/' + suffix + '" hrefLang="en"'), route);
+  }
   assert.ok(existsSync(join(root, "404.html")));
 });
 

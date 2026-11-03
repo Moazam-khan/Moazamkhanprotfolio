@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { alternatePage, localizePath, type Locale } from "@/lib/locales";
 import { Arrow } from "./Icon";
 
 const items = [
@@ -12,8 +13,13 @@ const items = [
   { id: "stack", label: "Stack" },
 ];
 
-export function SiteHeader() {
+export function SiteHeader({ locale }: { locale: Locale }) {
   const pathname = usePathname();
+  const arabic = locale === "ar";
+  const home = localizePath("/", locale);
+  const labels = ["الأعمال", "نبذة", "الخبرة", "المهارات"];
+  const current = pathname.endsWith("/") ? pathname : pathname + "/";
+  const alternate = alternatePage(pathname, locale);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -42,7 +48,7 @@ export function SiteHeader() {
     };
   }, [open]);
   useEffect(() => {
-    if (pathname !== "/") return;
+    if (current !== home) return;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -56,29 +62,42 @@ export function SiteHeader() {
       if (element) observer.observe(element);
     });
     return () => observer.disconnect();
-  }, [pathname]);
+  }, [current, home]);
 
   return (
     <header className="site-header">
-      <Link href="/" className="wordmark" aria-label="Moazam Khan home">
-        Moazam Khan<span>.</span>
+      <Link
+        href={home}
+        className="wordmark"
+        aria-label={arabic ? "معظم خان، الرئيسية" : "Moazam Khan home"}
+      >
+        {arabic ? "معظم خان" : "Moazam Khan"}
+        <span>.</span>
       </Link>
       <button
         ref={toggleRef}
         className="menu-toggle"
         aria-expanded={open}
         aria-controls="main-nav"
-        aria-label={open ? "Close menu" : "Open menu"}
+        aria-label={
+          arabic
+            ? open
+              ? "إغلاق القائمة"
+              : "فتح القائمة"
+            : open
+              ? "Close menu"
+              : "Open menu"
+        }
         onClick={() => setOpen(!open)}
       >
-        {open ? "Close" : "Menu"}
+        {arabic ? (open ? "إغلاق" : "القائمة") : open ? "Close" : "Menu"}
         <span aria-hidden="true">{open ? "×" : "☰"}</span>
       </button>
       {open && (
         <button
           className="menu-backdrop"
           tabIndex={-1}
-          aria-label="Close navigation"
+          aria-label={arabic ? "إغلاق القائمة" : "Close navigation"}
           onClick={() => {
             setOpen(false);
             toggleRef.current?.focus();
@@ -89,7 +108,7 @@ export function SiteHeader() {
         id="main-nav"
         ref={navRef}
         className={open ? "main-nav is-open" : "main-nav"}
-        aria-label="Main navigation"
+        aria-label={arabic ? "التنقل الرئيسي" : "Main navigation"}
         onBlur={(event) => {
           if (
             !event.currentTarget.contains(event.relatedTarget as Node) &&
@@ -98,29 +117,38 @@ export function SiteHeader() {
             setOpen(false);
         }}
       >
-        {items.map((item) => (
+        {items.map((item, index) => (
           <Link
             key={item.id}
-            href={`/#${item.id}`}
+            href={home + "#" + item.id}
             className={
-              active === item.id && pathname === "/"
+              active === item.id && current === home
                 ? "nav-link is-active"
                 : "nav-link"
             }
             onClick={() => setOpen(false)}
           >
-            {item.label}
+            {arabic ? labels[index] : item.label}
             <Arrow className="mobile-arrow" />
           </Link>
         ))}
         <Link
           className="nav-contact"
-          href="/#contact"
+          href={home + "#contact"}
           onClick={() => setOpen(false)}
         >
-          Let’s talk <Arrow />
+          {arabic ? "تواصل معي" : "Let’s talk"} <Arrow />
         </Link>
       </nav>
+      <a
+        className="language-switch"
+        href={alternate}
+        hrefLang={arabic ? "en" : "ar"}
+        lang={arabic ? "en" : "ar"}
+        dir={arabic ? "ltr" : "rtl"}
+      >
+        {arabic ? "English" : "العربية"}
+      </a>
     </header>
   );
 }

@@ -1,0 +1,103 @@
+.language-switch {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding-inline: 12px;
+  border: 1px solid var(--surface-border);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--warm);
+}
+.language-switch:hover {
+  border-color: var(--warm);
+  color: var(--text);
+}
+html[lang="ar"] {
+  --serif: Tahoma, Arial, sans-serif;
+  --sans: Tahoma, Arial, sans-serif;
+  --mono: Tahoma, Arial, sans-serif;
+}
+html[lang="ar"] :is(h1, h2, h3, .wordmark, .eyebrow, .section-label) {
+  letter-spacing: normal;
+  line-height: 1.4;
+}
+html[lang="ar"] .hero h1 {
+  font-size: clamp(52px, 11vw, 146px);
+}
+html[lang="ar"] .hero h1 em {
+  font-style: normal;
+}
+html[lang="ar"] .hero-topline .orange-dot {
+  margin: 0 0 0 12px;
+}
+html[lang="ar"] .hero-kicker {
+  letter-spacing: normal;
+}
+html[lang="ar"] .button svg,
+html[lang="ar"] .text-link svg,
+html[lang="ar"] .nav-contact svg {
+  flex-shrink: 0;
+}
+html[lang="ar"] .reading-progress {
+  transform-origin: right;
+}
+.arabic-content {
+  margin-block: clamp(28px, 5vw, 70px);
+}
+.arabic-content > p {
+  max-width: 68ch;
+  margin-block: 16px;
+}
+.arabic-content > h2 {
+  font-size: clamp(28px, 4vw, 48px);
+}
+.arabic-content .case-image {
+  margin-block: 30px;
+  width: 100%;
+  height: auto;
+}
+.arabic-project .project-copy {
+  padding-block: 14px 24px;
+}
+.arabic-project .project-image img {
+  width: 100%;
+}
+.arabic-content .tag-list li {
+  unicode-bidi: isolate;
+}
+.arabic-capabilities {
+  display: grid;
+  gap: 12px;
+}
+.arabic-capabilities details {
+  padding: 18px 22px;
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  background: #ffffff03;
+}
+.arabic-capabilities summary {
+  cursor: pointer;
+  color: var(--text);
+}
+.arabic-capabilities details p {
+  padding-block: 12px 3px;
+}
+@media (max-width: 900px) {
+  .site-header {
+    gap: 10px;
+  }
+  .site-header .menu-toggle {
+    margin-inline-start: auto;
+  }
+}
+@media (max-width: 400px) {
+  .site-header .language-switch {
+    padding-inline: 8px;
+    font-size: 12px;
+  }
+  .site-header .wordmark {
+    font-size: 22px;
+  }
+}
