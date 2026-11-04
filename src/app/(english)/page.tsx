@@ -10,11 +10,10 @@ import { featuredProjects, projects } from "@/data/projects";
 import { profile } from "@/data/profile";
 import { pageMetadata } from "@/lib/site";
 
-export const metadata = pageMetadata(
-  "Full Stack Developer",
-  profile.description,
-  "/",
-);
+export const metadata = {
+  ...pageMetadata("Full Stack Developer in Riyadh", profile.description, "/"),
+  title: { absolute: "Moazam Khan | Full Stack Developer in Riyadh" },
+};
 
 export default function Home() {
   return (

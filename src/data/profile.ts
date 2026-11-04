@@ -7,7 +7,7 @@ export const profile = {
     "I build web products, connect systems, and turn business ideas into software.",
   description:
     "Full stack developer in Riyadh building SaaS products, custom software, and mobile applications. Experienced in ERPNext customization, server deployment, and AI invoice automation with Ollama and OpenAI.",
-  linkedin: "https://www.linkedin.com/in/moazam-khan-089406319/",
+  linkedin: "https://www.linkedin.com/in/moazamkhan/",
   github: "https://github.com/Moazam-khan",
 } as const;
 

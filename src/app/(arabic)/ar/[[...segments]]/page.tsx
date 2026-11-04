@@ -46,13 +46,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : segments.length
         ? "/" + segments.join("/") + "/"
         : "/";
-  return pageMetadata(
+  const metadata = pageMetadata(
     title,
     project?.summary ??
       (section === "writing" ? writingCopy.ar.description : arabicDescription),
     path,
     "ar",
   );
+  return section
+    ? metadata
+    : { ...metadata, title: { absolute: "معظم خان | مطور متكامل في الرياض" } };
 }
 
 function Contact() {

@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { SiteHeader } from "@/components/SiteHeader";
 import { MotionProvider } from "@/components/MotionProvider";
 import { Footer } from "@/components/Footer";
+import { mediumProfile } from "@/data/writing";
 import { profile } from "@/data/profile";
 import { siteOrigin } from "@/lib/site";
 import "@/app/globals.css";
@@ -92,9 +93,13 @@ export function SiteDocument({
     name: profile.name,
     jobTitle: profile.role,
     description: profile.description,
-    sameAs: [profile.linkedin, profile.github],
+    sameAs: [profile.linkedin, profile.github, mediumProfile],
     ...(siteOrigin
-      ? { url: siteOrigin, image: `${siteOrigin}/images/moazam.webp` }
+      ? {
+          "@id": siteOrigin + "/#moazam-khan",
+          url: siteOrigin + "/",
+          image: `${siteOrigin}/images/moazam.webp`,
+        }
       : {}),
     address: {
       "@type": "PostalAddress",
