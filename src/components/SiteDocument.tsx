@@ -98,7 +98,7 @@ export function SiteDocument({
       ? {
           "@id": siteOrigin + "/#moazam-khan",
           url: siteOrigin + "/",
-          image: `${siteOrigin}/images/moazam.webp`,
+          image: `${siteOrigin}/images/moazam-suit-hd.webp`,
         }
       : {}),
     address: {

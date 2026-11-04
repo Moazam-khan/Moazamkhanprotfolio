@@ -22,10 +22,10 @@ export default function AboutPage() {
         <div className="about-page-grid">
           <div className="about-photo">
             <Image
-              src="/images/moazam.webp"
+              src="/images/moazam-suit-hd.webp"
               alt="Moazam Khan"
-              width={1200}
-              height={1600}
+              width={1065}
+              height={1476}
               sizes="(max-width: 700px) 90vw, 40vw"
             />
           </div>
