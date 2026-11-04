@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { languageLinks, localizePath, type Locale } from "./locales";
 
-const configuredOrigin = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+const configuredOrigin =
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
+  (process.env.VERCEL_ENV === "production"
+    ? "https://www.moazamkhan.com"
+    : undefined);
 export const siteOrigin = configuredOrigin
   ? new URL(configuredOrigin).origin
   : undefined;

@@ -45,7 +45,10 @@ export const metadata: Metadata = {
     template: "%s — Moazam Khan",
   },
   description: profile.description,
-  icons: { icon: "/icon.svg", apple: "/apple-icon.png" },
+  icons: {
+    icon: { url: "/favicon.png", type: "image/png", sizes: "180x180" },
+    apple: "/apple-icon.png",
+  },
   applicationName: "Moazam Khan Portfolio",
   authors: [{ name: profile.name, url: profile.linkedin }],
   robots: { index: !!siteOrigin, follow: !!siteOrigin },
