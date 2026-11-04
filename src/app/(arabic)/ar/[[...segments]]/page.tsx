@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { WritingList, writingCopy } from "@/components/WritingList";
 import { Arrow } from "@/components/Icon";
 import { ParticleField } from "@/components/ParticleField";
 import {
@@ -17,6 +18,7 @@ import { arabicDescription, skills, experience } from "@/data/profile.ar";
 
 type Props = { params: Promise<{ segments?: string[] }> };
 const titles = {
+  writing: writingCopy.ar.title,
   work: "معرض الأعمال",
   Projects: "معرض الأعمال",
   about: "نبذة عني",
@@ -44,7 +46,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : segments.length
         ? "/" + segments.join("/") + "/"
         : "/";
-  return pageMetadata(title, project?.summary ?? arabicDescription, path, "ar");
+  return pageMetadata(
+    title,
+    project?.summary ??
+      (section === "writing" ? writingCopy.ar.description : arabicDescription),
+    path,
+    "ar",
+  );
 }
 
 function Contact() {
@@ -380,6 +388,13 @@ export default async function ArabicPage({ params }: Props) {
   if (segments.length !== 1) notFound();
 
   switch (section) {
+    case "writing":
+      return (
+        <Page title={titles.writing}>
+          <p className="arabic-content">{writingCopy.ar.description}</p>
+          <WritingList locale="ar" />
+        </Page>
+      );
     case "work":
     case "Projects":
       return (

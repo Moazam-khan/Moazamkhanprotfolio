@@ -2,6 +2,7 @@ export type Locale = "en" | "ar";
 
 export const portfolioSections = [
   "work",
+  "writing",
   "about",
   "Experience",
   "Education",

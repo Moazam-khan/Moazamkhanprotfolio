@@ -23,6 +23,7 @@ test("exports matching English and Arabic pages with the correct language and di
   const routes = [
     "",
     "work",
+    "writing",
     "about",
     "Projects",
     "Experience",
@@ -68,4 +69,35 @@ test("local assets and internal page links resolve in the static export", () => 
       );
     }
   }
+});
+
+test("writing pages share crawlable Medium links and appear in the production sitemap", () => {
+  const pages = ["writing", "ar/writing"];
+  const articleLinks = [];
+  const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
+  for (const route of pages) {
+    const html = readFileSync(join(root, route, "index.html"), "utf8");
+    const links = Array.from(
+      html.matchAll(
+        /<a\b[^>]*href="(https:\/\/medium\.com\/@moazamkhan8999\/[^"]+)"[^>]*>/g,
+      ),
+      (match) => match[1],
+    );
+    assert.ok(links.length > 0, route + " is missing article links");
+    assert.equal(
+      new Set(links).size,
+      links.length,
+      route + " has duplicate links",
+    );
+    articleLinks.push(links);
+    const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+    if (canonical) {
+      assert.equal(new URL(canonical).pathname, "/" + route + "/");
+      assert.ok(
+        sitemap.includes("<loc>" + canonical + "</loc>"),
+        route + " is missing from the sitemap",
+      );
+    }
+  }
+  assert.deepEqual(articleLinks[0], articleLinks[1]);
 });

@@ -20,6 +20,8 @@ export function SiteHeader({ locale }: { locale: Locale }) {
   const labels = ["الأعمال", "نبذة", "الخبرة", "المهارات"];
   const current = pathname.endsWith("/") ? pathname : pathname + "/";
   const alternate = alternatePage(pathname, locale);
+  const writingPath = localizePath("/writing/", locale);
+  const isWriting = current === writingPath;
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -132,6 +134,14 @@ export function SiteHeader({ locale }: { locale: Locale }) {
             <Arrow className="mobile-arrow" />
           </Link>
         ))}
+        <Link
+          href={writingPath}
+          className={isWriting ? "nav-link is-active" : "nav-link"}
+          aria-current={isWriting ? "page" : undefined}
+          onClick={() => setOpen(false)}
+        >
+          {arabic ? "المقالات" : "Writing"} <Arrow className="mobile-arrow" />
+        </Link>
         <Link
           className="nav-contact"
           href={home + "#contact"}
