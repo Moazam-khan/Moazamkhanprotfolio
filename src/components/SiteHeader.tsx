@@ -144,10 +144,10 @@ export function SiteHeader({ locale }: { locale: Locale }) {
         </Link>
         <Link
           className="nav-contact"
-          href={home + "#contact"}
+          href={home + "#business-solutions"}
           onClick={() => setOpen(false)}
         >
-          {arabic ? "تواصل معي" : "Let’s talk"} <Arrow />
+          {arabic ? "لنعمل معًا" : "Work with me"} <Arrow />
         </Link>
       </nav>
       <a

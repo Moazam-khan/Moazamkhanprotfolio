@@ -1,3 +1,4 @@
+import { BusinessSolutions } from "@/components/BusinessSolutions";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -278,6 +279,7 @@ function Home() {
           </Link>
         </div>
       </section>
+      <BusinessSolutions locale="ar" />
       <Contact />
     </>
   );

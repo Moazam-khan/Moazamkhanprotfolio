@@ -1,3 +1,4 @@
+import { BusinessSolutions } from "@/components/BusinessSolutions";
 import Image from "next/image";
 import Link from "next/link";
 import { Arrow } from "@/components/Icon";
@@ -329,6 +330,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <BusinessSolutions />
       <ContactSection />
     </>
   );

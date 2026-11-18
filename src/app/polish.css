@@ -339,3 +339,118 @@ html[data-page-visible="false"] *::after {
     transform: translateY(-5px);
   }
 }
+
+/* Invitation for businesses, shared by the English and Arabic homepages. */
+.business-solutions-intro {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: end;
+  gap: 48px;
+  margin-block: 48px 38px;
+}
+.business-solutions-intro h2 {
+  font-size: clamp(38px, 4.6vw, 64px);
+}
+.business-solutions-intro > p {
+  max-width: 48ch;
+  line-height: 1.85;
+}
+.business-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.business-solutions-grid article {
+  padding: 28px;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--surface-radius);
+  background: linear-gradient(145deg, #d2c1a507, #d2c1a501);
+}
+.business-solutions-grid h3 {
+  font-size: 30px;
+  margin-block: 20px 14px;
+}
+.business-solutions-grid p {
+  font-size: 15px;
+  line-height: 1.85;
+}
+.business-solutions-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding-block-start: 32px;
+  margin-block-start: 32px;
+  border-block-start: 1px solid var(--line);
+}
+.business-solutions-action > p {
+  max-width: 52ch;
+}
+.business-solutions-action > div {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.business-solutions-action .muted {
+  font-size: 12px;
+}
+.business-solutions .button {
+  white-space: normal;
+}
+@media (max-width: 900px) {
+  .business-solutions-intro {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .business-solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .business-solutions-grid article {
+    padding: 24px;
+  }
+  .business-solutions-action {
+    align-items: start;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.business-process {
+  margin-block-start: 48px;
+}
+.business-process > h3 {
+  font-size: clamp(28px, 3vw, 38px);
+}
+.business-process ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  list-style: none;
+  padding: 0;
+  margin-block: 28px 0;
+}
+.business-process li {
+  border-block-start: 1px solid var(--line);
+  padding-block-start: 22px;
+}
+.business-process h4 {
+  font: 500 17px/1.6 var(--sans);
+  margin-block: 14px 10px;
+  color: var(--text);
+}
+.business-process p {
+  font-size: 15px;
+  line-height: 1.85;
+}
+.business-solutions-action > div {
+  min-width: 0;
+  max-width: 100%;
+}
+@media (max-width: 900px) {
+  .business-process ol {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
